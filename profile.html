@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="js/basic-ui.min.js"></script>
 </head>
 
 <body>
@@ -65,47 +67,48 @@
                 <button class="profile-button box" id="settings">Настройки</button>
                 <button class="profile-button box" id="pets">Ваши питомцы</button>
             </div>
-            <div class="profile-account option box">
-                <div class="account-section information">
+            <form class="profile-form box" id="account-form">
+                <fieldset class="account-section information">
                     <h2 class="profile-title">Информация</h2>
                     <div class="account-image"></div>
-                    <form class="account-form" action="">
+                    <div class="account-form" action="">
                         <label class="input-text-label">
                             <span class="input-text-title">Имя</span>
-                            <input class="input-text" type="text" name="name" placeholder="John Doe">
+                            <input class="input-text" id="account-name" type="text" name="name" placeholder="John Doe">
                         </label>
                         <label class="input-text-label">
                             <span class="input-text-title">Дата рождения</span>
-                            <input class="input-text input-date" type="text" placeholder="--/--/----">
+                            <input class="input-text" id="account-date" type="text" data-mask-options='{ "mask": "date" }'>
                         </label>
                         <label class="input-text-label">
                             <span class="input-text-title">Статус</span>
-                            <input class="input-text" type="text" value="Буба не работает!">
+                            <input class="input-text" id="account-status" type="text" value="Буба не работает!">
                         </label>
                         <label class="input-text-label">
                             <span class="input-text-title">Местоположение</span>
-                            <input class="input-text" type="text" value="Germany, Hamburg">
+                            <input class="input-text" id="account-location" type="text" value="Germany, Hamburg">
                         </label>
-                    </form>
-                </div>
-                <div class="account-section security">
+                    </div>
+                </fieldset>
+                <fieldset class="account-section security">
                     <h2 class="profile-title">Безопасность</h2>
-                    <form class="account-form" action="">
+                    <div class="account-form" action="">
                         <label class="input-text-label">
-                            <input class="input-text" type="password" placeholder="Текущий пароль">
+                            <input class="input-text" id="current-password" type="password"
+                                placeholder="Текущий пароль">
                         </label>
                         <label class="input-text-label">
-                            <input class="input-text" type="password" placeholder="Новый пароль">
+                            <input class="input-text" id="new-password" type="password" placeholder="Новый пароль">
                         </label>
-                    </form>
-                    <button class="button small">Сохранить</button>
-                </div>
-            </div>
-            <div class="profile-settings option box hide">
+                    </div>
+                </fieldset>
+                <button class="button small">Сохранить</button>
+            </form>
+            <form class="profile-form box hide" id="settings-form">
                 <h2 class="profile-title">Настройки</h2>
-                <div class="settings-section">
+                <fieldset class="settings-section">
                     <h3 class="profile-subtitle">Аккаунт</h3>
-                    <form class="settings-form" action="">
+                    <div class="settings-form" action="">
                         <label class="settings-label">
                             <input class="input-checkbox" type="checkbox">
                             <span class="checkbox"></span>
@@ -116,11 +119,11 @@
                             <span class="checkbox"></span>
                             Получать новостную рассылку
                         </label>
-                    </form>
-                </div>
-                <div class="settings-section">
+                    </div>
+                </fieldset>
+                <fieldset class="settings-section">
                     <h3 class="profile-subtitle">Приложение</h3>
-                    <form class="settings-form" action="">
+                    <div class="settings-form" action="">
                         <label class="settings-label">
                             <input class="input-checkbox" type="checkbox">
                             <span class="checkbox"></span>
@@ -136,176 +139,163 @@
                             <span class="checkbox"></span>
                             Браузерные уведомления
                         </label>
-                    </form>
+                    </div>
+                </fieldset>
+            </form>
+            <form class="profile-form box hide" id="pets-form">
+                <div class="steps">
+                    <span class="step">1</span>
+                    <span class="step-separator"></span>
+                    <span class="step">2</span>
+                    <span class="step-separator"></span>
+                    <span class="step">3</span>
+                    <span class="step-separator"></span>
+                    <span class="step">4</span>
                 </div>
-            </div>
-            <div class="profile-pets option box hide">
-                <form class="pets-form">
-
-                    <div class="steps">
-                        <span class="step">1</span>
-                        <span class="step-separator"></span>
-                        <span class="step">2</span>
-                        <span class="step-separator"></span>
-                        <span class="step">3</span>
-                        <span class="step-separator"></span>
-                        <span class="step">4</span>
-                    </div>
-
-                    <div class="profile-separator"></div>
-
-                    <div class="tab hide">
-                        <p class="pets-title">Давайте узнаем немного о вашем питомце?</p>
-                        <fieldset class="pets-fieldset-main">
-                            <label class="input-text-label">
-                                <input class="input-text" type="text" placeholder="Имя питомца" required>
-                            </label>
-                            <label class="gender-label">
-                                <input id="gender-checkbox" type="checkbox">
-                                <span class="gender-switcher"></span>
-                            </label>
-                            <label class="input-text-label">
-                                <span class="input-text-title">Опишите вашего питомца</span>
-                                <input class="input-text" type="text">
-                            </label>
-                            <fieldset class="pets-fieldset">
-                                <span>С какой целью выкладываете питомца?</span>
-                                <div class="pets-radio-container">
-                                    <label class="pets-radio">
-                                        <input class="input-radio" type="radio" name="reason" checked>
-                                        <span class="radio"></span>
-                                        Просто показываю
-                                    </label>
-                                    <label class="pets-radio">
-                                        <input class="input-radio" type="radio" name="reason">
-                                        <span class="radio"></span>
-                                        Отдаю в добрые руки
-                                    </label>
-                                    <label class="pets-radio">
-                                        <input class="input-radio" type="radio" name="reason">
-                                        <span class="radio"></span>
-                                        Торгую микрочелами
-                                    </label>
-                                </div>
-                            </fieldset>
-                        </fieldset>
-                    </div>
-
-                    <div class="tab hide">
-                        <div class="pets-titles">
-                            <span class="pets-title">Загрузите пару изображений питомца</span>
-                            <span class="pets-subtitle">Вы можете загрузить не более 15 изображений</span>
-                        </div>
-                        <label class="pets-drop">
-                            <input class="pets-drop-input" type="file" accept="image/*" multiple>
-                            <p><span>Выберете файлы</span> или перетащите их сюда</p>
+                <div class="profile-separator"></div>
+                <div class="tab hide">
+                    <p class="pets-title">Давайте узнаем немного о вашем питомце?</p>
+                    <fieldset class="pets-fieldset-main">
+                        <label class="input-text-label">
+                            <input class="input-text" type="text" placeholder="Имя питомца" required>
                         </label>
-                    </div>
-
-                    <div class="tab hide">
-                        <div class="pets-titles">
-                            <span class="pets-title">Давайте узнаем больше о вашем питомце</span>
-                        </div>
-                        <span>Ваш питомец...</span>
-
-                        <div class="pets-wrap">
-                            <div class="animal-buttons">
-                                <label class="animal-button" id="cats">
-                                    <input type="radio" name="animal" checked>
-                                    <span>Кот</span>
+                        <label class="gender-label">
+                            <input id="gender-checkbox" type="checkbox">
+                            <span class="gender-switcher"></span>
+                        </label>
+                        <label class="input-text-label">
+                            <span class="input-text-title">Опишите вашего питомца</span>
+                            <input class="input-text" type="text">
+                        </label>
+                        <fieldset class="pets-fieldset">
+                            <span>С какой целью выкладываете питомца?</span>
+                            <div class="pets-radio-container">
+                                <label class="pets-radio">
+                                    <input class="input-radio" type="radio" name="reason" checked>
+                                    <span class="radio"></span>
+                                    Просто показываю
                                 </label>
-                                <label class="animal-button" id="dogs">
-                                    <input type="radio" name="animal">
-                                    <span>Собака</span>
+                                <label class="pets-radio">
+                                    <input class="input-radio" type="radio" name="reason">
+                                    <span class="radio"></span>
+                                    Отдаю в добрые руки
                                 </label>
-                                <label class="animal-button" id="birds">
-                                    <input type="radio" name="animal">
-                                    <span>Птица</span>
-                                </label>
-                                <label class="animal-button" id="hares">
-                                    <input type="radio" name="animal">
-                                    <span>Заяц</span>
-                                </label>
-                                <label class="animal-button" id="mice">
-                                    <input type="radio" name="animal">
-                                    <span>Мышь</span>
-                                </label>
-                                <label class="animal-button" id="others">
-                                    <input type="radio" name="animal">
-                                    <span>Другой</span>
+                                <label class="pets-radio">
+                                    <input class="input-radio" type="radio" name="reason">
+                                    <span class="radio"></span>
+                                    Торгую микрочелами
                                 </label>
                             </div>
-
-                            <div class="pets-input-container">
-                                <div class="select">
-                                    <div class="select__header">
-                                        <span class="select__current">Порода</span>
-                                    </div>
-                                    <div class="select__body">
-                                        <div class="select__item">Макрочел</div>
-                                        <div class="select__item">Гигачел</div>
-                                        <div class="select__item">Микрочел</div>
-                                        <div class="select__item">Суперчел</div>
-                                        <div class="select__item">Мегачел</div>
-                                    </div>
+                        </fieldset>
+                    </fieldset>
+                </div>
+                <div class="tab hide">
+                    <div class="pets-titles">
+                        <span class="pets-title">Загрузите пару изображений питомца</span>
+                        <span class="pets-subtitle">Вы можете загрузить не более 15 изображений</span>
+                    </div>
+                    <label class="pets-drop">
+                        <input class="pets-drop-input" type="file" accept="image/*" multiple>
+                        <p><span>Выберете файлы</span> или перетащите их сюда</p>
+                    </label>
+                </div>
+                <div class="tab hide">
+                    <div class="pets-titles">
+                        <span class="pets-title">Давайте узнаем больше о вашем питомце</span>
+                    </div>
+                    <span>Ваш питомец...</span>
+                    <div class="pets-wrap">
+                        <div class="animal-buttons">
+                            <label class="animal-button" id="cats">
+                                <input type="radio" name="animal" checked>
+                                <span>Кот</span>
+                            </label>
+                            <label class="animal-button" id="dogs">
+                                <input type="radio" name="animal">
+                                <span>Собака</span>
+                            </label>
+                            <label class="animal-button" id="birds">
+                                <input type="radio" name="animal">
+                                <span>Птица</span>
+                            </label>
+                            <label class="animal-button" id="hares">
+                                <input type="radio" name="animal">
+                                <span>Заяц</span>
+                            </label>
+                            <label class="animal-button" id="mice">
+                                <input type="radio" name="animal">
+                                <span>Мышь</span>
+                            </label>
+                            <label class="animal-button" id="others">
+                                <input type="radio" name="animal">
+                                <span>Другой</span>
+                            </label>
+                        </div>
+                        <div class="pets-input-container">
+                            <div class="select">
+                                <div class="select__header">
+                                    <span class="select__current">Порода</span>
                                 </div>
-                                <label class="input-text-label">
-                                    <input class="input-text" type="date">
-                                </label>
-                                <label class="input-text-label">
-                                    <input class="input-text" type="number" placeholder="Вес, кг">
-                                </label>
-                                <div class="select">
-                                    <div class="select__header">
-                                        <span class="select__current">Страна</span>
-                                    </div>
-                                    <div class="select__body">
-                                        <div class="select__item">Германия</div>
-                                        <div class="select__item">Россия</div>
-                                    </div>
+                                <div class="select__body">
+                                    <div class="select__item">Макрочел</div>
+                                    <div class="select__item">Гигачел</div>
+                                    <div class="select__item">Микрочел</div>
+                                    <div class="select__item">Суперчел</div>
+                                    <div class="select__item">Мегачел</div>
                                 </div>
-                                <div class="select">
-                                    <div class="select__header">
-                                        <span class="select__current">Город</span>
-                                    </div>
-                                    <div class="select__body">
-                                        <div class="select__item">Пермь</div>
-                                        <div class="select__item">Москва</div>
-                                    </div>
+                            </div>
+                            <label class="input-text-label">
+                                <input class="input-text" type="date">
+                            </label>
+                            <label class="input-text-label">
+                                <input class="input-text" type="number" placeholder="Вес, кг">
+                            </label>
+                            <div class="select">
+                                <div class="select__header">
+                                    <span class="select__current">Страна</span>
                                 </div>
-                                <div class="select">
-                                    <div class="select__header">
-                                        <span class="select__current">Город</span>
-                                    </div>
-                                    <div class="select__body">
-                                        <div class="select__item">Пермь</div>
-                                        <div class="select__item">Москва</div>
-                                    </div>
+                                <div class="select__body">
+                                    <div class="select__item">Германия</div>
+                                    <div class="select__item">Россия</div>
+                                </div>
+                            </div>
+                            <div class="select">
+                                <div class="select__header">
+                                    <span class="select__current">Город</span>
+                                </div>
+                                <div class="select__body">
+                                    <div class="select__item">Пермь</div>
+                                    <div class="select__item">Москва</div>
+                                </div>
+                            </div>
+                            <div class="select">
+                                <div class="select__header">
+                                    <span class="select__current">Город</span>
+                                </div>
+                                <div class="select__body">
+                                    <div class="select__item">Пермь</div>
+                                    <div class="select__item">Москва</div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
-                    <div class="tab hide">
-                        <div>1</div>
-
-                    </div>
-
-                    <div class="pets-buttons">
-                        <button class="button small" id="prevBtn" type="button" onclick="nextPrev(-1)">Назад</button>
-                        <button class="button small" id="nextBtn" type="button" onclick="nextPrev(1)">Дальше</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="tab hide">
+                    <img class="img-succes" src="images/succes.png" alt="">
+                    <span class="succes-title">Вы успешно добавили питомца</span>
+                </div>
+                <div class="pets-buttons">
+                    <button class="button small" id="prevBtn" type="button" onclick="nextPrev(-1)">Назад</button>
+                    <button class="button small" id="nextBtn" type="button" onclick="nextPrev(1)">Дальше</button>
+                </div>
+            </form>
         </div>
     </main>
 
     <script>
 
         function showOption(button, option) {
-            let items = document.querySelectorAll('.option');
+            let items = document.querySelectorAll('.profile-form');
             let activeButton = document.querySelector('.profile-button-active');
 
             if (button.classList.contains('profile-button-active') == false) {
@@ -319,17 +309,17 @@
         }
 
         settings.addEventListener("click", function () {
-            let option = document.querySelector('.profile-settings');
+            let option = document.querySelector('#settings-form');
             showOption(this, option);
         })
 
         pets.addEventListener("click", function () {
-            let option = document.querySelector('.profile-pets');
+            let option = document.querySelector('#pets-form');
             showOption(this, option);
         })
 
         account.addEventListener("click", function () {
-            let option = document.querySelector('.profile-account');
+            let option = document.querySelector('#account-form');
             showOption(this, option);
         })
     </script>
@@ -418,9 +408,9 @@
         }
 
         function nextPrev(n) {
-            if (n == 1 && !validateForm()) {
+            /*if (n == 1 && !validateForm()) {
                 return false;
-            }
+            }*/
 
             if (n == -1) {
                 steps[currentTab].classList.remove('active');
@@ -462,7 +452,54 @@
     </script>
 
     <script>
+        const validator = new JustValidate('#account-form');
 
+        validator
+            .addField('#account-name', [
+                {
+                    rule: 'required',
+                },
+                {
+                    rule: 'minLength',
+                    value: 3,
+                },
+                {
+                    rule: 'maxLength',
+                    value: 15,
+                },
+            ])
+            .addField('#current-password', [
+                {
+                    rule: 'password',
+                },
+            ])
+
+
+    </script>
+    <script>
+        BasicMask.init(document.querySelector('#account-date'));
+        BasicMask.updateOptions('#account-date', {
+            mask: Date,
+    pattern: 'd/`m/`Y',
+    format: function (date) {
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+  
+      if (day < 10) day = "0" + day;
+      if (month < 10) month = "0" + month;
+  
+      return [day, month, year].join('/');
+    },
+    // define str -> date convertion
+    parse: function (str) {
+      var yearMonthDay = str.split('/');
+      return new Date(yearMonthDay[2], yearMonthDay[1] - 1, yearMonthDay[0]);
+    },
+    min: new Date(1980, 0, 1),
+    max: new Date(2020, 0, 1),
+    lazy: false,
+    });
     </script>
 </body>
 

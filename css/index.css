@@ -95,6 +95,12 @@ figure {
     margin: 0;
 }
 
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 h1 {
     font-weight: 700;
     font-size: 30px;
@@ -191,16 +197,44 @@ h1 {
     color: var(--solid-danger);
 }
 
-.input-text-label:has(.input-text.invalid) {
-    border-bottom: 1px solid var(--solid-danger);
-}
-
-.input-text-label:has(.input-text.invalid) .input-text-title {
+.just-validate-error-field {
     color: var(--solid-danger);
 }
 
-.input-text-label:has(.input-text.invalid:valid) {
+.just-validate-error-field::placeholder {
+    color: var(--solid-danger);
+}
+
+.input-text-label:has(.just-validate-error-field) {
+    border-bottom: 1px solid var(--solid-danger);
+}
+
+.input-text-label:has(.just-validate-error-field) .input-text-title {
+    color: var(--solid-danger);
+}
+
+.just-validate-success-field {
+    color: var(--solid-succes);
+}
+
+.just-validate-success-field::placeholder {
+    color: var(--solid-succes);
+}
+
+.input-text-label:has(.just-validate-success-field) {
     border-bottom: 1px solid var(--solid-succes);
+}
+
+.input-text-label:has(.just-validate-success-field) .input-text-title {
+    color: var(--solid-succes);
+}
+
+.just-validate-error-label {
+    color: var(--solid-danger);
+}
+
+input:-internal-autofill-selected {
+    background: transparent;
 }
 
 /*input-text end*/
@@ -1453,10 +1487,10 @@ h1 {
     background-image: url('../icons/your-pets.svg');
 }
 
-.profile-account {
+.profile-form {
     display: flex;
     flex-direction: column;
-    gap: 34px;
+    gap: 30px;
     grid-column: span 2;
 }
 
@@ -1884,6 +1918,19 @@ h1 {
     gap: 30px;
 }
 
+.img-succes {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.succes-title {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 
 /*profile end*/
 
@@ -1895,7 +1942,7 @@ h1 {
         grid-column: span 5;
     }
 
-    .profile-account {
+    .profile-form {
         grid-column: span 5;
     }
 
@@ -1947,11 +1994,14 @@ h1 {
     .pets-buttons {
         margin-top: 13px;
         flex-direction: row;
-        justify-content: space-between;
     }
 
     .pets-buttons .button {
         max-width: 270px;
+    }
+
+    #nextBtn {
+        margin-left: auto;
     }
 
     .pets-wrap {
@@ -2297,16 +2347,12 @@ h1 {
         gap: 15px;
     }
 
-    .profile-account {
+    .profile-form {
         grid-column: span 6;
     }
 
-    .profile-settings {
+    #settings-form {
         grid-column: span 4;
-    }
-
-    .profile-pets {
-        grid-column: span 6;
     }
 
     /*profile end*/
@@ -2588,16 +2634,12 @@ h1 {
 
     /*profile*/
 
-    .profile-account {
+    .profile-form {
         grid-column: span 5;
     }
 
-    .profile-settings {
+    #settings-form {
         grid-column: span 3;
-    }
-
-    .profile-pets {
-        grid-column: span 5;
     }
 
     /*profile end*/
