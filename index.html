@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/time.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+
+        <input id="burger-checkbox" type="checkbox">
+        <label class="burger" for="burger-checkbox">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </label>
+
+        <aside id="header-menu">
+            <img class="menu-logo" src="icons/logo.svg" alt="">
+            
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="menu-link active" href="index.html">
+                            <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
+                            <span class="menu-name">Home</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="pets.html">
+                            <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
+                            <span class="menu-name">Pets</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="blog.html">
+                            <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
+                            <span class="menu-name">Blog</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="">
+                            <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
+                            <span class="menu-name">Chat</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="profile.html">
+                            <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
+                            <span class="menu-name">Profile</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="">
+                            <img class="menu-icon blue" src="icons/logout.svg" alt="">
+                            <span class="menu-name">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <h1 class="header-title">Home</h1>
+
+        <input id="switcher-checkbox" type="checkbox">
+        <label class="header-switcher" for="switcher-checkbox">
+            <span class="switcher"></span>
+        </label>
+
+        <div class="header-push"></div>
+        <a class="profile-image" href="profile.html" style="background-image: url('images/profile.jpg')"></a>
+    </header>
+    <main>
+        <div class="main">
+            <article class="welcome box">
+                <div class="welcome-text">
+                    <p>С возвращением, Владимир</p>
+                    <p>Не забудь покормить своего питомца</p>
+                    <p>Хорошего дня!</p>
+                </div>
+                <img class="welcome-image" src="images/img1.png" alt="">
+            </article>
+            <article class="useful swiper">
+                <div class="useful-list swiper-wrapper">
+                    <section class="activity box swiper-slide">
+                        <div class="activity-graph">
+                            <div class="pie-wrap">
+                                <div class="pie">62%</div>
+                                <div class="pie-extra" style="--percent: 62; --color: #F16063"></div>
+                                <div class="pie-extra" style="--percent: 40; --color: #FFEF5E"></div>
+                                <div class="pie-extra" style="--percent: 20; --color: #66CB9F"></div>
+                            </div>
+                        </div>
+                        <div class="activity-progress">
+                            <h2 class="progress-title">Ежедневный прогресс</h2>
+                            <ul class="progress-list">
+                                <li class="progress-item no">Прогулка в парке</li>
+                                <li class="progress-item yes">Обед</li>
+                                <li class="progress-item yes">Перекус 1/2</li>
+                                <li class="progress-item">Игры</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="clock box swiper-slide">
+                        <div class="clock-row box">
+                            <span class="clock-item">На часах у нас</span>
+                            <time id="time" datetime="2021-10-05T03:46">3:46</time>
+                        </div>
+                        <div class="clock-row box">
+                            <span class="clock-item">На календаре у нас</span>
+                            <time id="date" datetime="2021-10-05">05.10.2021</time>
+                        </div>
+                    </section>
+                </div>
+            </article>
+            <article class="statistics box">
+                <figure class="statistics-cover">
+                    <div class="swiper cover">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="cover-image" src="images/img4.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="cover-image" src="images/gallery1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="cover-shadow"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <figcaption class="cover-description">
+                        <span class="cover-name">Johny</span>
+                        <span>3 лайка</span>
+                    </figcaption>
+                </figure>
+                <div class="statistics-diagram">
+                    <div class="diagram-description">
+                        <span class="diagram-line">Лайки</span>
+                        <span class="diagram-line">Просмотры</span>
+                    </div>
+                    <div class="diagram">
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 104px; --likes: 28px"></div>
+                            <div class="diagram-date">17</div>
+                            <div class="diagram-day">ПН</div>
+                        </div>
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 70px; --likes: 28px"></div>
+                            <div class="diagram-date">18</div>
+                            <div class="diagram-day">ВТ</div>
+                        </div>
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 82px; --likes: 28px"></div>
+                            <div class="diagram-date">19</div>
+                            <div class="diagram-day">СР</div>
+                        </div>
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 127px; --likes: 28px"></div>
+                            <div class="diagram-date">20</div>
+                            <div class="diagram-day">ЧТ</div>
+                        </div>
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 95px; --likes: 28px"></div>
+                            <div class="diagram-date">21</div>
+                            <div class="diagram-day">ПТ</div>
+                        </div>
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 64px; --likes: 28px"></div>
+                            <div class="diagram-date">22</div>
+                            <div class="diagram-day">СБ</div>
+                        </div>
+                        <div class="diagram-column">
+                            <div class="diagram-item" style="--views: 95px; --likes: 28px"></div>
+                            <div class="diagram-date">23</div>
+                            <div class="diagram-day">ВС</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="chat swiper">
+                <div class="chat-list swiper-wrapper">
+                    <div class="chat-item box swiper-slide">
+                        <div class="chat-info">
+                            <div class="profile-image purple-gradient">Y</div>
+                            <div class="chat-wrap">
+                                <div class="chat-wrap-line">
+                                    <span class="chat-name">Ynfan</span>
+                                    <time class="chat-time" datetime="2021-10-05T17:20">17:20</time>
+                                </div>
+                                <div class="chat-wrap-line">
+                                    <span class="chat-caption">Пельмень с мясом.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <article class="chat-message">
+                            <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
+                                выпрыгнет
+                                утка.</p>
+                            <p>Я его уже не уговариваю.</p>
+                            <p>Он так сидит уже несколько лет.</p>
+                        </article>
+                    </div>
+                    <div class="chat-item box swiper-slide">
+                        <div class="chat-info">
+                            <div class="profile-image" style="background-image: url('images/avatar.jpg')"></div>
+                            <div class="chat-wrap">
+                                <div class="chat-wrap-line">
+                                    <span class="chat-name">Qulliman</span>
+                                    <time class="chat-time" datetime="2021-10-05T17:20">17:20</time>
+                                </div>
+                                <div class="chat-wrap-line">
+                                    <span class="chat-caption">Пес – это тоже я.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <article class="chat-message">
+                            <p>Если собаку гладить против шерсти, то она кусаться будет.</p>
+                        </article>
+                    </div>
+                    <div class="chat-item box swiper-slide">
+                        <div class="chat-info">
+                            <div class="profile-image yellow-gradient online">R</div>
+                            <div class="chat-wrap">
+                                <div class="chat-wrap-line">
+                                    <span class="chat-name">Ran</span>
+                                    <time datetime="2021-10-05T08:20" class="chat-time">8:20</time>
+                                </div>
+                                <div class="chat-wrap-line">
+                                    <span class="chat-caption">Взгляд - это зеркало души.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <article class="chat-message">
+                            <p>Жил да был как-то хомяк, он любил играть с прищепками и был одинок, и решил
+                                создать семью, которая состояла из хомячихи и двух хомячат. И вот однажды в
+                                доме
+                                появился еще один хомяк</p>
+                        </article>
+                    </div>
+                    <div class="chat-item box swiper-slide">
+                        <div class="chat-info">
+                            <div class="profile-image orange-gradient online">F</div>
+                            <div class="chat-wrap">
+                                <div class="chat-wrap-line">
+                                    <span class="chat-name">Frefyse</span>
+                                    <time datetime="2021-10-05T04:20" class="chat-time">4:20</time>
+                                </div>
+                                <div class="chat-wrap-line">
+                                    <span class="chat-caption">ауф диар фройндшафт!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <article class="chat-message">
+                            <p>Что делать если кот укусил собаку? Прочитать эту историю. Кот укусил собаку.
+                                Собака укусила кошку. А кошка, случайно, укусила человека. И теперь на нем
+                                живого места нет!</p>
+                        </article>
+                    </div>
+                    <div class="chat-item box swiper-slide">
+                        <div class="chat-info">
+                            <div class="profile-image purple-gradient">Y</div>
+                            <div class="chat-wrap">
+                                <div class="chat-wrap-line">
+                                    <span class="chat-name">Ynfan</span>
+                                    <time datetime="2021-10-05T17:20" class="chat-time">17:20</time>
+                                </div>
+                                <div class="chat-wrap-line">
+                                    <span class="chat-caption">Пельмень с мясом.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <article class="chat-message">
+                            <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
+                                выпрыгнет
+                                утка.</p>
+                            <p>Я его уже не уговариваю.</p>
+                            <p>Он так сидит уже несколько лет.</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </article>
+            <article class="gallery swiper">
+                <div class="gallery-list swiper-wrapper">
+                    <figure class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery1.jpg" alt=""></a>
+                        <figcaption class="gallery-description">
+                            <a href="pets-detail.html" class="gallery-name">Bob</a>
+                            <div class="gallery-info">
+                                <span class="gallery-caption young">Котенок</span>
+                                <span class="like-counter">326 лайков</span>
+                                <div class="like-icon"></div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery2.jpg" alt=""></a>
+                        <figcaption class="gallery-description">
+                            <a href="pets-detail.html" class="gallery-name">Loki</a>
+                            <div class="gallery-info">
+                                <span class="gallery-caption">Кот</span>
+                                <span class="like-counter">11 лайков</span>
+                                <div class="like-icon pressed"></div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery3.jpg" alt=""></a>
+                        <figcaption class="gallery-description">
+                            <a href="pets-detail.html" class="gallery-name">Bob</a>
+                            <div class="gallery-info">
+                                <span class="gallery-caption young">Котенок</span>
+                                <span class="like-counter">326 лайка</span>
+                                <div class="like-icon"></div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery4.jpg" alt=""></a>
+                        <figcaption class="gallery-description">
+                            <a href="pets-detail.html" class="gallery-name">Loki</a>
+                            <div class="gallery-info">
+                                <span class="gallery-caption">Кот</span>
+                                <span class="like-counter">11 лайков</span>
+                                <div class="like-icon pressed"></div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </article>
+            <article class="users box">
+                <div class="users-wrapper">
+                    <div class="profile-image yellow-gradient">r</div>
+                    <div class="profile-image purple-gradient">t</div>
+                    <div class="profile-image orange-gradient">q</div>
+                    <div class="profile-image green-gradient">j</div>
+                    <div class="profile-image pink-gradient">y</div>
+                    <div class="profile-image green-gradient">j</div>
+                    <div class="profile-image">+</div>
+                </div>
+                <button class="button small">Напиши сейчас</button>
+            </article>
+        </div>
+    </main>
+    <script>
+        var swiper = new Swiper(".chat", {
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+            loop: true,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 'auto',
+                    loop: false,
+                    centeredSlides: false,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 'auto',
+                    loop: false,
+                    centeredSlides: false,
+                    spaceBetween: 20,
+                },
+                1920: {
+                    slidesPerView: 4,
+                    loop: false,
+                    centeredSlides: false,
+                    spaceBetween: 40,
+                },
+            },
+        });
+        var swiper = new Swiper(".gallery", {
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+            loop: true,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 'auto',
+                    loop: false,
+                    centeredSlides: false,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 'auto',
+                    loop: false,
+                    centeredSlides: false,
+                    spaceBetween: 20,
+                },
+                1920: {
+                    slidesPerView: 2,
+                    loop: false,
+                    centeredSlides: false,
+                    spaceBetween: 40,
+                },
+            },
+        });
+        var swiper = new Swiper(".cover", {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+
+        var swiper = undefined;
+        const breakpoint = window.matchMedia("(max-width: 767px)");
+
+        const breakpointChecker = () => {
+
+            if (breakpoint.matches) {
+                var swiper = new Swiper(".useful", {
+                    slidesPerView: 'auto',
+                    spaceBetween: 15,
+                });
+            } else if (swiper != undefined) {
+                swiper.destroy();
+            }
+        };
+
+        breakpoint.addEventListener("change", breakpointChecker);
+        breakpointChecker();
+    </script>
+
+    <!--<script>
+        var offsetHeight = document.querySelector('.graph').offsetHeight;
+        var offsetWidth = document.querySelector('.graph').offsetWidth;
+        console.log('Ширина:', offsetWidth);
+        console.log('Высота:', offsetHeight);
+        if (offsetHeight > offsetWidth) {
+            document.body.style.setProperty('--w', offsetWidth + 'px');
+            console.log('хуй:', offsetWidth);
+        } else {
+            document.body.style.setProperty('--w', offsetHeight + 'px');
+            console.log('хуйй:', offsetWidth);
+        };
+        window.addEventListener('resize', (e) => {
+            var offsetHeight = document.querySelector('.graph').offsetHeight;
+            var offsetWidth = document.querySelector('.graph').offsetWidth;
+            if (offsetHeight > offsetWidth) {
+                document.body.style.setProperty('--w', offsetWidth + 'px');
+            } else {
+                document.body.style.setProperty('--w', offsetHeight + 'px');
+            }
+        });
+    </script>-->
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питомцы</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pets-detail.css">
+    <script src="js/theme.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <header class="header">
+        <input id="burger-checkbox" type="checkbox">
+        <label class="burger" for="burger-checkbox">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </label>
+        <aside id="header-menu">
+            <img class="menu-logo" src="icons/logo.svg" alt="">
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="menu-link" href="index.html">
+                            <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
+                            <span class="menu-name">Home</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link active" href="pets.html">
+                            <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
+                            <span class="menu-name">Pets</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="blog.html">
+                            <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
+                            <span class="menu-name">Blog</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="">
+                            <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
+                            <span class="menu-name">Chat</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="profile.html">
+                            <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
+                            <span class="menu-name">Profile</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="">
+                            <img class="menu-icon blue" src="icons/logout.svg" alt="">
+                            <span class="menu-name">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <button onclick="window.history.back()" class="return"></button>
+        <h1 class="header-title">Питомцы\Локи</h1>
+        <input id="switcher-checkbox" type="checkbox">
+        <label class="header-switcher" for="switcher-checkbox">
+            <span class="switcher"></span>
+        </label>
+        <div class="header-push"></div>
+        <a class="profile-image" href="profile.html">JD</a>
+    </header>
+    <main>
+        <div class="main">
+            <div class="pets-detail swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery13.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery14.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="pets-detail-image" src="images/gallery6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="pets-detail-wrapper">
+                <div class="pets-detail-caption">
+                    <p><span class="caption-name">Локи,</span></p>
+                    <img class="caption-icon" src="icons/location.svg" alt="">
+                    <p>Германия</p>
+                </div>
+                <div class="pets-detail-breed">
+                    <p>Британский короткошорстный</p>
+                    <span class="breed-separator"></span>
+                    <p>Кот</p>
+                </div>
+                <div class="pets-detail-counters">
+                    <div class="counter-row">
+                        <div class="like-icon"></div>
+                        <p>11 лайков</p>
+                    </div>
+                    <div class="counter-row">
+                        <div class="cost-icon"></div>
+                        <p>5 000 ₽</p>
+                    </div>
+                </div>
+                <div class="pets-detail-separator"></div>
+                <div class="pets-detail-table">
+                    <p><span class="table-head">Возраст</span></p>
+                    <p><span class="table-head">Вес</span></p>
+                    <p><span class="table-head">Пол</span></p>
+                    <p>2 года</p>
+                    <p>2 кг</p>
+                    <p>Мужской</p>
+                </div>
+                <p><span class="description-title">Описание</span></p>
+                <article class="description-text">
+                    <p>Кот Локи больше не просит есть. Он просто сидит напротив и смотрит на меня так, будто ждет,
+                        что я
+                        подам ему еду. Как-то ночью я проснулся от того, что почувствовал, что рядом кто-то есть. Я
+                        повернулся, чтобы увидеть, кто это, но там никого не было. Мне было страшно.</p>
+                </article>
+                <button class="button">Купить - 5 000 ₽</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        swiper = new Swiper(".pets-detail", {
+            slidesPerView: 'auto',
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>
