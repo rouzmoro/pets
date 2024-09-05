@@ -10,7 +10,7 @@
     <script src="js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-    <script src="js/basic-ui.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
 </head>
 
 <body>
@@ -71,14 +71,15 @@
                 <fieldset class="account-section information">
                     <h2 class="profile-title">Информация</h2>
                     <div class="account-image"></div>
-                    <div class="account-form" action="">
+                    <div class="account-form">
                         <label class="input-text-label">
                             <span class="input-text-title">Имя</span>
-                            <input class="input-text" id="account-name" type="text" name="name" placeholder="John Doe">
+                            <input class="input-text" id="account-name" type="text" name="name" value="John Doe">
                         </label>
                         <label class="input-text-label">
                             <span class="input-text-title">Дата рождения</span>
-                            <input class="input-text" id="account-date" type="text" data-mask-options='{ "mask": "date" }'>
+                            <input class="input-text" id="account-date" type="text"
+                                data-mask-options='{ "mask": "date" }'>
                         </label>
                         <label class="input-text-label">
                             <span class="input-text-title">Статус</span>
@@ -94,11 +95,12 @@
                     <h2 class="profile-title">Безопасность</h2>
                     <div class="account-form" action="">
                         <label class="input-text-label">
-                            <input class="input-text" id="current-password" type="password"
+                            <input class="input-text" id="account-password-current" type="password"
                                 placeholder="Текущий пароль">
                         </label>
                         <label class="input-text-label">
-                            <input class="input-text" id="new-password" type="password" placeholder="Новый пароль">
+                            <input class="input-text" id="account-password-new" type="password"
+                                placeholder="Новый пароль">
                         </label>
                     </div>
                 </fieldset>
@@ -157,7 +159,7 @@
                     <p class="pets-title">Давайте узнаем немного о вашем питомце?</p>
                     <fieldset class="pets-fieldset-main">
                         <label class="input-text-label">
-                            <input class="input-text" type="text" placeholder="Имя питомца" required>
+                            <input class="input-text" id="pet-name" type="text" placeholder="Имя питомца">
                         </label>
                         <label class="gender-label">
                             <input id="gender-checkbox" type="checkbox">
@@ -165,7 +167,7 @@
                         </label>
                         <label class="input-text-label">
                             <span class="input-text-title">Опишите вашего питомца</span>
-                            <input class="input-text" type="text">
+                            <input class="input-text" id="pet-description" type="text">
                         </label>
                         <fieldset class="pets-fieldset">
                             <span>С какой целью выкладываете питомца?</span>
@@ -412,6 +414,18 @@
                 return false;
             }*/
 
+            console.log(petValidation.fields.elem);
+
+            let inputs = tabs[currentTab].querySelectorAll('.input-text');
+
+            for (let input of inputs) {
+                console.log(input);
+                petValidation.revalidateField(input).then(isValid => {})
+            }
+
+
+            console.log(petValidation.fields[1].isValid);
+
             if (n == -1) {
                 steps[currentTab].classList.remove('active');
             }
@@ -452,54 +466,151 @@
     </script>
 
     <script>
-        const validator = new JustValidate('#account-form');
+        const accountValidation = new JustValidate('#account-form', {
+            errorLabelStyle: {
+                color: 'var(--solid-danger)'
+            }
+        });
 
-        validator
+        accountValidation
             .addField('#account-name', [
                 {
                     rule: 'required',
+                    errorMessage: 'Введите имя'
                 },
                 {
                     rule: 'minLength',
                     value: 3,
+                    errorMessage: 'Имя должно содержать не менее 3 символов'
                 },
                 {
                     rule: 'maxLength',
                     value: 15,
+                    errorMessage: 'Имя должно содержать не более 15 символов'
                 },
             ])
-            .addField('#current-password', [
+            .addField('#account-date', [
+                {
+                    rule: 'required',
+                },
+                {
+                    validator: (value) => {
+                        return mask.unmaskedValue !== undefined && (mask.unmaskedValue.length >= 8);
+                    },
+                    errorMessage: 'Введите дату рождения',
+                },
+            ])
+            .addField('#account-status', [
+                {
+                    rule: 'maxLength',
+                    value: 32,
+                    errorMessage: 'Статус должен содержать не более 32 символов'
+                },
+            ])
+            .addField('#account-location', [
+                {
+                    rule: 'maxLength',
+                    value: 32,
+                    errorMessage: 'Местоположение должно содержать не более 32 символов'
+                },
+            ])
+            .addField('#account-password-current', [
                 {
                     rule: 'password',
+                    errorMessage: 'Пароль должен содержать не менее 8 символов, букву и цифру'
+                },
+                {
+                    validator: (value, fields) => {
+                        if (fields['#account-password-new'] && fields['#account-password-new'].elem) {
+                            if (value.length == 0 && fields['#account-password-new'].elem.value.length != 0) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    },
+                    errorMessage: 'Текущий пароль должен быть заполнен',
+                },
+
+            ])
+            .addField('#account-password-new', [
+                {
+                    rule: 'password',
+                    errorMessage: 'Пароль должен содержать не менее 8 символов, букву и цифру'
+                },
+                {
+                    validator: (value, fields) => {
+                        if (fields['#account-password-current'] && fields['#account-password-current'].elem) {
+                            if (fields['#account-password-current'].elem.value.length != 0 && value.length == 0) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    },
+                    errorMessage: 'Введите новый пароль',
                 },
             ])
 
+        const petValidation = new JustValidate('#pets-form', {
+            errorLabelStyle: {
+                color: 'var(--solid-danger)'
+            }
+        });
 
+        petValidation
+            .addField('#pet-name', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Введите имя'
+                },
+                {
+                    rule: 'minLength',
+                    value: 3,
+                    errorMessage: 'Имя должно содержать не менее 3 символов'
+                },
+                {
+                    rule: 'maxLength',
+                    value: 15,
+                    errorMessage: 'Имя должно содержать не более 15 символов'
+                },
+            ])
     </script>
     <script>
-        BasicMask.init(document.querySelector('#account-date'));
-        BasicMask.updateOptions('#account-date', {
+        let test = document.querySelector('#account-date');
+
+        const maskOptions = {
             mask: Date,
-    pattern: 'd/`m/`Y',
-    format: function (date) {
-      var day = date.getDate();
-      var month = date.getMonth() + 1;
-      var year = date.getFullYear();
-  
-      if (day < 10) day = "0" + day;
-      if (month < 10) month = "0" + month;
-  
-      return [day, month, year].join('/');
-    },
-    // define str -> date convertion
-    parse: function (str) {
-      var yearMonthDay = str.split('/');
-      return new Date(yearMonthDay[2], yearMonthDay[1] - 1, yearMonthDay[0]);
-    },
-    min: new Date(1980, 0, 1),
-    max: new Date(2020, 0, 1),
-    lazy: false,
-    });
+            pattern: 'd/`m/`Y',
+            format: function (date) {
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (day < 10) day = "0" + day;
+                if (month < 10) month = "0" + month;
+
+                return [day, month, year].join('/');
+            },
+            // define str -> date convertion
+            parse: function (str) {
+                var yearMonthDay = str.split('/');
+                return new Date(yearMonthDay[2], yearMonthDay[1] - 1, yearMonthDay[0]);
+            },
+            min: new Date(1980, 0, 1),
+            max: new Date(2020, 0, 1),
+            lazy: false,
+            placeholderChar: '-',
+        };
+
+        const mask = IMask(test, maskOptions);
+
+
+        console.log(mask.value);  // '100'
+        console.log(mask.unmaskedValue);
+
+        const log = () => console.log(mask.value);
+        // 'accept' event fired on input when mask value has changed
+        mask.on('accept', log);
+
     </script>
 </body>
 

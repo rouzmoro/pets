@@ -155,6 +155,7 @@ h1 {
     padding: 8px;
     gap: 0;
     border-bottom: 1px solid var(--text-secondary-color);
+    position: relative;
 }
 
 .input-text-label:has(.input-text-title) {
@@ -231,6 +232,13 @@ h1 {
 
 .just-validate-error-label {
     color: var(--solid-danger);
+    font-size: 8px;
+    line-height: 12px;
+    text-align: right;
+    right: 0;
+    top: 37px;
+    position: absolute;
+
 }
 
 input:-internal-autofill-selected {
