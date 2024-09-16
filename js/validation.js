@@ -21,7 +21,7 @@ accountValidation
             errorMessage: 'Имя должно содержать не более 15 символов'
         },
     ])
-    .addField('#account-date', [
+    .addField('#account-birthdate', [
         {
             rule: 'required',
         },
@@ -103,5 +103,12 @@ petValidation
             rule: 'maxLength',
             value: 15,
             errorMessage: 'Имя должно содержать не более 15 символов'
+        },
+    ])
+    .addField('#pet-description', [
+        {
+            rule: 'maxLength',
+            value: 32,
+            errorMessage: 'Описание должно содержать не более 32 символов'
         },
     ])

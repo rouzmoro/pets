@@ -28,18 +28,23 @@ function nextPrev(n) {
     /*if (n == 1 && !validateForm()) {
         return false;
     }*/
-
-    console.log(petValidation.fields.elem);
-
+    let valid = true;
     let inputs = tabs[currentTab].querySelectorAll('.input-text');
 
     for (let input of inputs) {
-        console.log(input);
-        petValidation.revalidateField('#pet-name').then(isValid => { })
+        console.log(input.id);
+        petValidation.revalidateField(`#${input.id}`).then(isValid => { 
+            if (isValid == false) {
+                valid = false;
+                console.log(valid);
+                console.log('yes');
+            }
+        })
     }
 
-
-    console.log(petValidation.fields[1].isValid);
+    if (n == 1 && valid == false) {
+        return false;
+    }
 
     if (n == -1) {
         steps[currentTab].classList.remove('active');
@@ -48,7 +53,6 @@ function nextPrev(n) {
     tabs[currentTab].classList.add('hide');
 
     currentTab = currentTab + n;
-    console.log(currentTab);
 
     if (currentTab >= tabs.length) {
         document.getElementById("regForm").submit();
