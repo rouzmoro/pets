@@ -20,65 +20,43 @@ function showTab(n) {
     } else {
         next.textContent = "Дальше";
     }
-    fixStepIndicator(n);
-
+    steps[n].classList.add('active');
 }
 
 function nextPrev(n) {
-    /*if (n == 1 && !validateForm()) {
-        return false;
-    }*/
-    let valid = true;
-    let inputs = tabs[currentTab].querySelectorAll('.input-text');
+    if (currentTab < tabs.length - 1) {
 
-    for (let input of inputs) {
-        console.log(input.id);
-        petValidation.revalidateField(`#${input.id}`).then(isValid => { 
-            if (isValid == false) {
-                valid = false;
-                console.log(valid);
-                console.log('yes');
-            }
-        })
+        if (n == -1) {
+            steps[currentTab].classList.remove('active');
+        }
+
+        if (n == 1 && !validateForm()) {
+            console.log('yes');
+            return false;
+        }
+
+        tabs[currentTab].classList.add('hide');
+
+        currentTab = currentTab + n;
+
+        showTab(currentTab);
+
+    } else {
+        document.querySelector("#pets-form").submit();
     }
 
-    if (n == 1 && valid == false) {
-        return false;
-    }
-
-    if (n == -1) {
-        steps[currentTab].classList.remove('active');
-    }
-
-    tabs[currentTab].classList.add('hide');
-
-    currentTab = currentTab + n;
-
-    if (currentTab >= tabs.length) {
-        document.getElementById("regForm").submit();
-        return false;
-    }
-
-    showTab(currentTab);
 }
 
 function validateForm() {
-    let valid = true;
-    let formFields = tabs[currentTab].getElementsByTagName("input");
+    var valid = true;
+    let inputs = tabs[currentTab].querySelectorAll('.input-text');
 
-    if (formFields) {
-        for (let formField of formFields) {
-            if (formField.value == "") {
-                formField.classList.add("invalid");
-                valid = false;
-            }
+    if (inputs.length != 0) {
+        for (let input of inputs) {
+            petValidation.revalidateField(`#${input.id}`);
         }
     }
 
     return valid;
-}
 
-function fixStepIndicator(n) {
-
-    steps[n].classList.add('active');
 }

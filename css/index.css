@@ -265,12 +265,18 @@ input:-internal-autofill-selected {
     cursor: pointer;
 }
 
-.input-radio:checked ~ .radio::after {
+.radio::after {
     content: '';
     border-radius: 50%;
+    width: 0;
+    height: 0;
+    transition: width .2s, height .2s;
+    background: var(--solid-primary);
+}
+
+.input-radio:checked ~ .radio::after {
     width: 14px;
     height: 14px;
-    background: var(--solid-primary);
 }
 
 /*input-radio end*/
@@ -412,7 +418,7 @@ input:-internal-autofill-selected {
 }
 
 #burger-checkbox:checked~#header-menu {
-    translate: 0;
+    scale: 1;
 }
 
 /*burger end*/
@@ -433,7 +439,8 @@ input:-internal-autofill-selected {
     background: var(--background-color);
     overflow: auto;
     z-index: 2;
-    translate: -100% -100%;
+    transform-origin: left top;
+    scale: 0;
     transition: .3s;
 }
 
@@ -472,6 +479,7 @@ input:-internal-autofill-selected {
     height: 32px;
     padding: 8px;
     border-radius: 8px;
+    scale: 1;
 }
 
 /*sidebar end*/
@@ -1600,6 +1608,7 @@ input:-internal-autofill-selected {
 }
 
 .step {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1607,13 +1616,32 @@ input:-internal-autofill-selected {
     height: 34px;
     border-radius: 50%;
     background: var(--solid-primary-light);
-    color: var(--solid-dark-light-theme);
     flex-shrink: 0;
-    font-size: 16px;
+    overflow: hidden;
 }
 
-.step.active {
+.step::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
     background: var(--solid-primary);
+    transition: width .2s .2s;
+}
+
+.step.active::before {
+    width: 100%;
+}
+
+.step span {
+    font-size: 16px;
+    color: var(--solid-dark-light-theme);
+    transition: color .2s .2s;
+    z-index: 1;
+}
+
+.step.active span {
     color: var(--solid-primary-light);
 }
 
@@ -1630,17 +1658,19 @@ input:-internal-autofill-selected {
     position: absolute;
     width: 0;
     border-radius: 40px;
-    height: 4px;
+    height: 100%;
     background: var(--solid-primary);
-    transition: width .3s;
+    transition: width .2s;
 }
 
-.active + .step-separator::before {
+.step.active + .step-separator::before {
     width: 50%;
+    transition: width .2s .4s;
 }
 
-.step-separator:has(+.active)::before {
+.step-separator:has(+.step.active)::before {
     width: 100%;
+    transition: width .2s;
 }
 
 .profile-separator {
@@ -1709,6 +1739,7 @@ input:-internal-autofill-selected {
     height: 27px;
     background: url('../icons/female.svg') center no-repeat;
     z-index: 1;
+    transition: filter .3s;
 }
 
 .gender-label::after {
@@ -1721,6 +1752,7 @@ input:-internal-autofill-selected {
     width: 37px;
     height: 27px;
     background: var(--solid-primary);
+    transition: translate .3s;
 }
 
 .gender-label:has(#gender-checkbox:checked) .gender-switcher {
@@ -1779,7 +1811,7 @@ input:-internal-autofill-selected {
     width: 100%;
     height: 250px;
     border-radius: 6px;
-    border: 1px dashed var(--solid-primary-light);
+    border: 1px dashed var(--text-secondary-color);
     padding: 30px;
 }
 
@@ -2454,7 +2486,7 @@ input:-internal-autofill-selected {
     /*sidebar*/
 
     #header-menu {
-        translate: 0;
+        scale: 1;
         padding: 30px 20px;
         width: auto;
         gap: 80px;
@@ -2684,6 +2716,10 @@ input:-internal-autofill-selected {
     /*swiper*/
 
     /*main end*/
+
+    body.light-theme .menu-link .menu-icon {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
+    }
 
 }
 
@@ -2923,10 +2959,6 @@ body.light-theme .menu-logo {
     filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
 }
 
-body.light-theme .menu-link .menu-icon {
-    filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
-}
-
 body.light-theme .menu-link.active .menu-icon {
     filter: none;
 }
@@ -2945,4 +2977,34 @@ body.light-theme .header-push {
 body.light-theme .input-text::placeholder {
     color: var(--solid-dark-light-theme);
 }
+
+body.light-theme .input-text.just-validate-error-field::placeholder {
+    color: var(--solid-danger);
+}
+
+body.light-theme .profile-button::before {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
+}
+
+body.light-theme .profile-button-active::before {
+    filter: none;
+}
+
+body.light-theme .gender-label {
+    background: var(--solid-primary-light);
+}
+
+body.light-theme .gender-label::after {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
+}
+
+body.light-theme .gender-label:has(input:checked)::after {
+    filter: none;
+}
+
+body.light-theme .gender-label:has(input:checked)::before {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
+}
+
+
 
