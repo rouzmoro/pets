@@ -30,10 +30,11 @@ function nextPrev(n) {
             steps[currentTab].classList.remove('active');
         }
 
-        if (n == 1 && !validateForm()) {
-            console.log('yes');
+        /*if (n == 1 && !(validateForm())) {
             return false;
-        }
+        }*/
+
+        console.log('yes');
 
         tabs[currentTab].classList.add('hide');
 
@@ -47,16 +48,24 @@ function nextPrev(n) {
 
 }
 
-function validateForm() {
-    var valid = true;
+/*async function validateForm() {
+    let valid = true;
     let inputs = tabs[currentTab].querySelectorAll('.input-text');
 
     if (inputs.length != 0) {
         for (let input of inputs) {
-            petValidation.revalidateField(`#${input.id}`);
+            let result = await petValidation.revalidateField(`#${input.id}`);
+            if (!result) {
+                console.log('1');
+                valid = false;
+                console.log(valid);
+            }
         }
     }
 
+    console.log('2');
+    console.log(valid);
+
     return valid;
 
-}
+}*/

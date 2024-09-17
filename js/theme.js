@@ -11,10 +11,8 @@ function switchTheme() {
     document.getElementById('switcher-checkbox').addEventListener('click', function () {
         if (document.body.classList.toggle("light-theme")) {
             localStorage.setItem("theme", "light");
-            console.log(localStorage.getItem("theme"));
         } else {
             localStorage.setItem("theme", "dark");
-            console.log(localStorage.getItem("theme"));
         }
     });
 }

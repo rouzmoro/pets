@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/pets-detail.css">
     <script src="js/theme.js"></script>
+    <script defer src="js/swiperPetsDetail.js"></script>
 </head>
 
 <body>
@@ -143,20 +144,6 @@
             </div>
         </div>
     </main>
-    <script>
-        swiper = new Swiper(".pets-detail", {
-            slidesPerView: 'auto',
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                dynamicBullets: true,
-                clickable: true,
-            },
-        });
-    </script>
 </body>
 
 </html>

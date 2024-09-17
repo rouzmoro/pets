@@ -14,7 +14,7 @@
     display: none;
 }
 
-.header-profile {
+.profile-image {
     display: none;
 }
 
@@ -274,7 +274,7 @@
     .header-push {
         display: block;
     }
-    .header-profile {
+    .profile-image {
         display: inline-grid;
     }
 
