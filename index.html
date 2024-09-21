@@ -8,10 +8,9 @@
     <link rel="icon" href="icons/logo-dark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/time.js"></script>
-    <script src="js/theme.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="js/swiperIndex.js"></script>
+    <script src="js/theme.js"></script>
+    <script defer src="js/index.js"></script>
     <script defer src="js/likes.js"></script>
 </head>
 
@@ -27,7 +26,6 @@
 
         <aside id="header-menu">
             <img class="menu-logo" src="icons/logo.svg" alt="">
-
             <nav class="menu">
                 <ul class="menu-list">
                     <li class="menu-item">
@@ -77,7 +75,7 @@
             <span class="switcher"></span>
         </label>
 
-        <div class="header-push"></div>
+        <button class="profile-push active" onclick="this.classList.toggle('active')"></button>
         <a class="profile-image" href="profile.html" style="background-image: url('images/profile.jpg')"></a>
     </header>
     <main>
@@ -92,15 +90,15 @@
             </article>
             <div class="compact-container">
                 <article class="activity box">
-                    <div class="activity-graph">
+                    <section class="activity-graph">
                         <div class="pie-wrap">
                             <div class="pie">62%</div>
                             <div class="pie-extra" style="--percent: 62; --color: #F16063"></div>
                             <div class="pie-extra" style="--percent: 40; --color: #FFEF5E"></div>
                             <div class="pie-extra" style="--percent: 20; --color: #66CB9F"></div>
                         </div>
-                    </div>
-                    <div class="activity-progress">
+                    </section>
+                    <section class="activity-progress">
                         <h2 class="progress-title">Ежедневный прогресс</h2>
                         <ul class="progress-list">
                             <li class="progress-item no">Прогулка в парке</li>
@@ -108,17 +106,17 @@
                             <li class="progress-item yes">Перекус 1/2</li>
                             <li class="progress-item">Игры</li>
                         </ul>
-                    </div>
+                    </section>
                 </article>
                 <article class="clock box">
-                    <div class="clock-row box">
+                    <section class="clock-row box">
                         <span class="clock-item">На часах у нас</span>
                         <time id="time" datetime="2021-10-05T03:46">3:46</time>
-                    </div>
-                    <div class="clock-row box">
+                    </section>
+                    <section class="clock-row box">
                         <span class="clock-item">На календаре у нас</span>
                         <time id="date" datetime="2021-10-05">05.10.2021</time>
-                    </div>
+                    </section>
                 </article>
             </div>
             <article class="statistics box">
