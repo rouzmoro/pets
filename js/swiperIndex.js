@@ -66,7 +66,7 @@ var swiper = new Swiper(".cover", {
 });
 
 
-var swiper = undefined;
+/*var swiper = undefined;
 const breakpoint = window.matchMedia("(max-width: 767px)");
 
 const breakpointChecker = () => {
@@ -82,4 +82,4 @@ const breakpointChecker = () => {
 };
 
 breakpoint.addEventListener("change", breakpointChecker);
-breakpointChecker();
+breakpointChecker();*/

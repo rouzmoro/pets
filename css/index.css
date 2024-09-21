@@ -647,7 +647,7 @@ input:-internal-autofill-selected {
     width: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
-    scroll-margin-left: 25px;
+    scroll-margin: 0 25px;
 }
 
 .activity-graph {
@@ -787,7 +787,7 @@ input:-internal-autofill-selected {
     width: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
-    scroll-margin-left: 25px;
+    scroll-margin: 0 25px;
 }
 
 .clock-row {
@@ -1535,7 +1535,7 @@ input:-internal-autofill-selected {
     padding: 0 25px;
     display: flex;
     gap: 25px;
-    overflow-x: auto;
+    overflow: auto;
     scroll-snap-type: x mandatory;
 }
 
