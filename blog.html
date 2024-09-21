@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script defer src="js/masonryBlog.js"></script>
     <script defer src="js/imagesInput.js"></script>
+    <script defer src="js/blog.js"></script>
 </head>
 
 <body>
@@ -76,21 +77,21 @@
     </header>
     <main>
         <div class="main">
-            <div class="chat-comment-new box">
+            <form class="new-post box">
                 <div class="profile-image">JD</div>
-                <form class="chat-text">
-                    <textarea class="chat-textarea" rows="1" name="" id="textarea"
-                        placeholder="Что у вас нового?"></textarea>
-                </form>
+                <div class="chat-text">
+                    <textarea class="chat-textarea" rows="1" placeholder="Что у вас нового?"></textarea>
+                </div>
                 <div class="attachments" id="attachments">
                     <input type="file" id="attachments-checkbox" class="attach-checkbox" accept="image/*" multiple>
                     <label for="attachments-checkbox" class="attach"></label>
                     <!-- <div class="attachment attachment-new">+</div> -->
                 </div>
-            </div>
+            </form>
             <div class="chat-wrapper" id="chat-wrapper">
                 <div class="chat-item-sizer"></div>
                 <div class="chat-gutter"></div>
+                
                 <div class="chat-item box">
                     <div class="chat-info">
                         <div class="profile-image pink-gradient">Y</div>
@@ -118,21 +119,17 @@
                         <div><img src="images/gallery3.jpg" alt=""></div>
                     </div>
                     <div class="chat-counters">
-                        <div class="chat-counters-row">
-                            <div class="like-icon pressed"></div>
-                            <p>20<span class="chat-counter-name"> лайков</span></p>
-                        </div>
-                        <div class="chat-counters-row">
-                            <div class="comment-icon"></div>
-                            <p>47<span class="chat-counter-name"> комментариев</span></p>
-                        </div>
+                        <button class="chat-counter likes">20 <span class="chat-counter-name">лайков</span></button>
+                        <button class="chat-counter comments">47 <span class="chat-counter-name">комментариев</span></button>
                     </div>
-                    <div class="chat-separator"></div>
                     <div class="chat-comment">
                         <div class="profile-image">JD</div>
-                        <div class="chat-textarea-test" contenteditable="true" placeholder="Написать комментарий..."></div>
+                        <div class="chat-text">
+                            <textarea class="chat-textarea" rows="1" placeholder="Написать комментарий..."></textarea>
+                        </div>
                     </div>
                 </div>
+
                 <div class="chat-item box">
                     <div class="chat-info">
                         <div class="profile-image orange-gradient">R</div>
@@ -153,19 +150,17 @@
                             И вот однажды в доме появился еще один хомяк...</p>
                     </article>
                     <div class="chat-counters">
-                        <div class="chat-counters-row">
-                            <div class="like-icon"></div>
-                        </div>
-                        <div class="chat-counters-row">
-                            <div class="comment-icon"></div>
-                        </div>
+                        <button class="chat-counter likes"></button>
+                        <button class="chat-counter comments"></button>
                     </div>
-                    <div class="chat-separator"></div>
                     <div class="chat-comment">
                         <div class="profile-image">JD</div>
-                        <div class="chat-textarea-test" contenteditable="true" placeholder="Написать комментарий..."></div>
+                        <div class="chat-text">
+                            <textarea class="chat-textarea" rows="1" placeholder="Написать комментарий..."></textarea>
+                        </div>
                     </div>
                 </div>
+
                 <div class="chat-item box">
                     <div class="chat-info">
                         <div class="profile-image orange-gradient">R</div>
@@ -186,19 +181,17 @@
                             И вот однажды в доме появился еще один хомяк...</p>
                     </article>
                     <div class="chat-counters">
-                        <div class="chat-counters-row">
-                            <div class="like-icon"></div>
-                        </div>
-                        <div class="chat-counters-row">
-                            <div class="comment-icon"></div>
-                        </div>
+                        <button class="chat-counter likes"></button>
+                        <button class="chat-counter comments"></button>
                     </div>
-                    <div class="chat-separator"></div>
                     <div class="chat-comment">
                         <div class="profile-image">JD</div>
-                        <div class="chat-textarea-test" contenteditable="true" placeholder="Написать комментарий..."></div>
+                        <div class="chat-text">
+                            <textarea class="chat-textarea" rows="1" placeholder="Написать комментарий..."></textarea>
+                        </div>
                     </div>
                 </div>
+
                 <div class="chat-item box">
                     <div class="chat-info">
                         <div class="profile-image orange-gradient">R</div>
@@ -219,19 +212,17 @@
                             И вот однажды в доме появился еще один хомяк...</p>
                     </article>
                     <div class="chat-counters">
-                        <div class="chat-counters-row">
-                            <div class="like-icon"></div>
-                        </div>
-                        <div class="chat-counters-row">
-                            <div class="comment-icon"></div>
-                        </div>
+                        <button class="chat-counter likes"></button>
+                        <button class="chat-counter comments"></button>
                     </div>
-                    <div class="chat-separator"></div>
                     <div class="chat-comment">
                         <div class="profile-image">JD</div>
-                        <div class="chat-textarea-test" contenteditable="true" placeholder="Написать комментарий..."></div>
+                        <div class="chat-text">
+                            <textarea class="chat-textarea" rows="1" placeholder="Написать комментарий..."></textarea>
+                        </div>
                     </div>
                 </div>
+
                 <div class="chat-item box">
                     <div class="chat-info">
                         <div class="profile-image orange-gradient">R</div>
@@ -252,19 +243,17 @@
                             И вот однажды в доме появился еще один хомяк...</p>
                     </article>
                     <div class="chat-counters">
-                        <div class="chat-counters-row">
-                            <div class="like-icon"></div>
-                        </div>
-                        <div class="chat-counters-row">
-                            <div class="comment-icon"></div>
-                        </div>
+                        <button class="chat-counter likes"></button>
+                        <button class="chat-counter comments"></button>
                     </div>
-                    <div class="chat-separator"></div>
                     <div class="chat-comment">
                         <div class="profile-image">JD</div>
-                        <div class="chat-textarea-test" contenteditable="true" placeholder="Написать комментарий..."></div>
+                        <div class="chat-text">
+                            <textarea class="chat-textarea" rows="1" placeholder="Написать комментарий..."></textarea>
+                        </div>
                     </div>
                 </div>
+
                 <div class="chat-item box">
                     <div class="chat-info">
                         <div class="profile-image orange-gradient">R</div>
@@ -285,17 +274,14 @@
                             И вот однажды в доме появился еще один хомяк...</p>
                     </article>
                     <div class="chat-counters">
-                        <div class="chat-counters-row">
-                            <div class="like-icon"></div>
-                        </div>
-                        <div class="chat-counters-row">
-                            <div class="comment-icon"></div>
-                        </div>
+                        <button class="chat-counter likes"></button>
+                        <button class="chat-counter comments"></button>
                     </div>
-                    <div class="chat-separator"></div>
                     <div class="chat-comment">
                         <div class="profile-image">JD</div>
-                        <div class="chat-textarea-test" contenteditable="true" placeholder="Написать комментарий..."></div>
+                        <div class="chat-text">
+                            <textarea class="chat-textarea" rows="1" placeholder="Написать комментарий..."></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
