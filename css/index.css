@@ -78,14 +78,6 @@ body {
     color: var(--text-color);
 }
 
-button {
-    margin: 0;
-    padding: 0;
-    background: 0;
-    border: none;
-    color: var(--text-color);
-}
-
 p {
     margin: 0;
 }
@@ -1270,35 +1262,7 @@ input:-internal-autofill-selected {
     gap: 15px;
 }
 
-.likes-counter {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 15px;
-    line-height: 18px;
-    text-wrap: nowrap;
-    cursor: pointer;
-}
-
-.likes-counter::after {
-    content: '';
-    flex-shrink: 0;
-    height: 22px;
-    width: 22px;
-    background-image: url('../icons/unlike.svg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image .3s;
-}
-
-.likes-counter:hover::after,
-.likes-counter.pressed::after {
-    background-image: url('../icons/like.svg');
-}
-
-/*.like {
+.like {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1333,7 +1297,7 @@ input:-internal-autofill-selected {
 
 .pressed:hover {
     background-image: url('../icons/unlike.svg');
-}*/
+}
 
 .cost-icon {
     flex-shrink: 0;
@@ -1553,7 +1517,6 @@ input:-internal-autofill-selected {
     overflow-x: auto;
     padding: 0 25px;
     margin: 0 -25px;
-    scroll-snap-type: x mandatory;
 }
 
 .profile-button {
@@ -1567,8 +1530,6 @@ input:-internal-autofill-selected {
     gap: 20px;
     align-items: center;
     cursor: pointer;
-    scroll-snap-align: start;
-    scroll-margin-left: 25px;
 }
 
 .profile-button-active {
