@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/theme.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="js/swiperPets.js"></script>
     <script defer src="js/petsButtons.js"></script>
+    <script defer src="js/likes.js"></script>
 </head>
 
 <body>
@@ -26,28 +28,22 @@
             <nav class="menu">
                 <ul class="menu-list">
                     <li class="menu-item">
-                        <a class="menu-link" href="index.html"><img class="menu-icon purple-gradient"
-                                src="icons/home.svg" alt=""><span class="menu-name">Home</span></a>
+                        <a class="menu-link" href="index.html"><img class="menu-icon purple-gradient" src="icons/home.svg" alt=""><span class="menu-name">Home</span></a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link active" href="pets.html"><img class="menu-icon orange-gradient"
-                                src="icons/pets.svg" alt=""><span class="menu-name">Pets</span></a>
+                        <a class="menu-link active" href="pets.html"><img class="menu-icon orange-gradient" src="icons/pets.svg" alt=""><span class="menu-name">Pets</span></a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="blog.html"><img class="menu-icon yellow-gradient"
-                                src="icons/blog.svg" alt=""><span class="menu-name">Blog</span></a>
+                        <a class="menu-link" href="blog.html"><img class="menu-icon yellow-gradient" src="icons/blog.svg" alt=""><span class="menu-name">Blog</span></a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href=""><img class="menu-icon pink-gradient" src="icons/chat.svg"
-                                alt=""><span class="menu-name">Chat</span></a>
+                        <a class="menu-link" href=""><img class="menu-icon pink-gradient" src="icons/chat.svg" alt=""><span class="menu-name">Chat</span></a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="profile.html"><img class="menu-icon green-gradient"
-                                src="icons/person.svg" alt=""><span class="menu-name">Profile</span></a>
+                        <a class="menu-link" href="profile.html"><img class="menu-icon green-gradient" src="icons/person.svg" alt=""><span class="menu-name">Profile</span></a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href=""><img class="menu-icon blue" src="icons/logout.svg" alt=""><span
-                                class="menu-name">Logout</span></a>
+                        <a class="menu-link" href=""><img class="menu-icon blue" src="icons/logout.svg" alt=""><span class="menu-name">Logout</span></a>
                     </li>
                 </ul>
             </nav>
@@ -57,161 +53,157 @@
         <label class="header-switcher" for="switcher-checkbox">
             <span class="switcher"></span>
         </label>
-        <button class="profile-push active" onclick="this.classList.toggle('active')"></button>
+        <div class="header-push"></div>
         <a class="profile-image" href="profile.html">JD</a>
     </header>
     <main>
         <div class="main">
-            <nav class="pets-menu">
-                <button class="pets-menu-item active" id="cats">Коты</button>
-                <button class="pets-menu-item active" id="dogs">Собаки</button>
-                <button class="pets-menu-item active" id="birds">Птицы</button>
-                <button class="pets-menu-item active" id="hares">Зайцы</button>
-                <button class="pets-menu-item active" id="mice">Мыши</button>
-                <button class="pets-menu-item active" id="others">Другие</button>
+            <nav class="pets-menu swiper">
+                <ul class="pets-menu-list swiper-wrapper">
+                    <li class="pets-menu-item swiper-slide pets-menu-item-active" id="cats">
+                        <div class="pets-menu-icon"></div>
+                        <p>Коты</p>
+                    </li>
+                    <li class="pets-menu-item swiper-slide pets-menu-item-active" id="dogs">
+                        <div class="pets-menu-icon"></div>
+                        <p>Собаки</p>
+                    </li>
+                    <li class="pets-menu-item swiper-slide pets-menu-item-active" id="birds">
+                        <div class="pets-menu-icon"></div>
+                        <p>Птицы</p>
+                    </li>
+                    <li class="pets-menu-item swiper-slide pets-menu-item-active" id="hares">
+                        <div class="pets-menu-icon"></div>
+                        <p>Зайцы</p>
+                    </li>
+                    <li class="pets-menu-item swiper-slide pets-menu-item-active" id="mice">
+                        <div class="pets-menu-icon"></div>
+                        <p>Мыши</p>
+                    </li>
+                    <li class="pets-menu-item swiper-slide pets-menu-item-active" id="others">
+                        <div class="pets-menu-icon"></div>
+                        <p>Другие</p>
+                    </li>
+                </ul>
             </nav>
             <section class="pets-gallery">
                 <figure class="pets-gallery-item cat box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery1.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery1.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption young">Котенок</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item dog box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery3.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery3.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Пес</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item cat box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery4.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery4.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Кот</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item hare box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery5.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery5.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Заяц</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item mouse box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery6.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery6.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Мышь</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item other box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery7.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery7.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption young">Другое</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item dog box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery4.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery4.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Пес</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item hare box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery8.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery8.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption young">Зайчонок</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item mouse box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery9.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery9.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption young">Мышонок</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item other box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery10.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery10.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Другое</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item dog box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery11.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery11.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption young">Щенок</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="pets-gallery-item bird box">
-                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                            src="images/gallery12.jpg" alt=""></a>
+                    <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery12.jpg" alt=""></a>
                     <figcaption class="gallery-description">
                         <a href="pets-detail.html" class="gallery-name">Bob</a>
                         <div class="gallery-info">
                             <span class="gallery-caption">Птица</span>
-                            <span class="like-counter">326 лайков</span>
-                            <div class="like-icon"></div>
+                            <span class="likes-counter">326</span>
                         </div>
                     </figcaption>
                 </figure>

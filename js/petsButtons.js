@@ -1,12 +1,15 @@
 function showAnimals(animals, element) {
-    if (element.classList.toggle('active')) {
+    if ( element.classList.contains('pets-menu-item-active') ) {
         for (let animal of animals) {
-            animal.classList.remove('hide');
+            animal.style.display = "none";
         }
+        element.classList.remove('pets-menu-item-active');
+
     } else {
         for (let animal of animals) {
-            animal.classList.add('hide');
+            animal.style.display = "block";
         }
+        element.classList.add('pets-menu-item-active');
     }
 }
 

@@ -1,23 +1,3 @@
-/*time*/
-
-function updateTime() {
-    let currentDate = new Date();
-    let timeString = document.querySelector("#time");
-    let dateString = document.querySelector("#date");
-
-    timeString.textContent = currentDate.toLocaleTimeString();
-    timeString.setAttribute('datetime', currentDate.toISOString().slice(0, -8));
-
-    dateString.textContent = currentDate.toLocaleDateString();
-    dateString.setAttribute('datetime', currentDate.toISOString().slice(0, 10));
-
-    setTimeout(updateTime, 1000); 
-}
-
-updateTime();
-
-/*time end*/
-
 var swiper = new Swiper(".chat", {
     slidesPerView: 'auto',
     spaceBetween: 15,
@@ -85,7 +65,8 @@ var swiper = new Swiper(".cover", {
     },
 });
 
-/*var swiper = undefined;
+
+var swiper = undefined;
 const breakpoint = window.matchMedia("(max-width: 767px)");
 
 const breakpointChecker = () => {
@@ -101,4 +82,4 @@ const breakpointChecker = () => {
 };
 
 breakpoint.addEventListener("change", breakpointChecker);
-breakpointChecker();*/
+breakpointChecker();

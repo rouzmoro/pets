@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="icon" href="icons/logo-dark.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<<<<<<< HEAD
+    <script src="js/time.js"></script>
     <script src="js/theme.js"></script>
-    <script defer src="js/index.js"></script>
-    <script defer src="js/likes.js"></script>
-=======
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="js/swiperIndex.js"></script>
->>>>>>> parent of 87553a2 (8)
+    <script defer src="js/likes.js"></script>
 </head>
 
 <body>
@@ -30,6 +27,7 @@
 
         <aside id="header-menu">
             <img class="menu-logo" src="icons/logo.svg" alt="">
+            
             <nav class="menu">
                 <ul class="menu-list">
                     <li class="menu-item">
@@ -71,7 +69,7 @@
                 </ul>
             </nav>
         </aside>
-
+        
         <h1 class="header-title">Home</h1>
 
         <input id="switcher-checkbox" type="checkbox">
@@ -79,7 +77,7 @@
             <span class="switcher"></span>
         </label>
 
-        <button class="profile-push active" onclick="this.classList.toggle('active')"></button>
+        <div class="header-push"></div>
         <a class="profile-image" href="profile.html" style="background-image: url('images/profile.jpg')"></a>
     </header>
     <main>
@@ -92,37 +90,39 @@
                 </div>
                 <img class="welcome-image" src="images/img1.png" alt="">
             </article>
-            <div class="compact-container">
-                <article class="activity box">
-                    <section class="activity-graph">
-                        <div class="pie-wrap">
-                            <div class="pie">62%</div>
-                            <div class="pie-extra" style="--percent: 62; --color: #F16063"></div>
-                            <div class="pie-extra" style="--percent: 40; --color: #FFEF5E"></div>
-                            <div class="pie-extra" style="--percent: 20; --color: #66CB9F"></div>
+            <article class="useful swiper">
+                <div class="useful-list swiper-wrapper">
+                    <section class="activity box swiper-slide">
+                        <div class="activity-graph">
+                            <div class="pie-wrap">
+                                <div class="pie">62%</div>
+                                <div class="pie-extra" style="--percent: 62; --color: #F16063"></div>
+                                <div class="pie-extra" style="--percent: 40; --color: #FFEF5E"></div>
+                                <div class="pie-extra" style="--percent: 20; --color: #66CB9F"></div>
+                            </div>
+                        </div>
+                        <div class="activity-progress">
+                            <h2 class="progress-title">Ежедневный прогресс</h2>
+                            <ul class="progress-list">
+                                <li class="progress-item no">Прогулка в парке</li>
+                                <li class="progress-item yes">Обед</li>
+                                <li class="progress-item yes">Перекус 1/2</li>
+                                <li class="progress-item">Игры</li>
+                            </ul>
                         </div>
                     </section>
-                    <section class="activity-progress">
-                        <h2 class="progress-title">Ежедневный прогресс</h2>
-                        <ul class="progress-list">
-                            <li class="progress-item no">Прогулка в парке</li>
-                            <li class="progress-item yes">Обед</li>
-                            <li class="progress-item yes">Перекус 1/2</li>
-                            <li class="progress-item">Игры</li>
-                        </ul>
+                    <section class="clock box swiper-slide">
+                        <div class="clock-row box">
+                            <span class="clock-item">На часах у нас</span>
+                            <time id="time" datetime="2021-10-05T03:46">3:46</time>
+                        </div>
+                        <div class="clock-row box">
+                            <span class="clock-item">На календаре у нас</span>
+                            <time id="date" datetime="2021-10-05">05.10.2021</time>
+                        </div>
                     </section>
-                </article>
-                <article class="clock box">
-                    <section class="clock-row box">
-                        <span class="clock-item">На часах у нас</span>
-                        <time id="time" datetime="2021-10-05T03:46">3:46</time>
-                    </section>
-                    <section class="clock-row box">
-                        <span class="clock-item">На календаре у нас</span>
-                        <time id="date" datetime="2021-10-05">05.10.2021</time>
-                    </section>
-                </article>
-            </div>
+                </div>
+            </article>
             <article class="statistics box">
                 <figure class="statistics-cover">
                     <div class="swiper cover">
@@ -294,50 +294,42 @@
             <article class="gallery swiper">
                 <div class="gallery-list swiper-wrapper">
                     <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                                src="images/gallery1.jpg" alt=""></a>
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery1.jpg" alt=""></a>
                         <figcaption class="gallery-description">
                             <a href="pets-detail.html" class="gallery-name">Bob</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption young">Котенок</span>
-                                <span class="like-counter">326 лайков</span>
-                                <div class="like-icon"></div>
+                                <button class="likes-counter">321</button>
                             </div>
                         </figcaption>
                     </figure>
                     <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                                src="images/gallery2.jpg" alt=""></a>
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery2.jpg" alt=""></a>
                         <figcaption class="gallery-description">
                             <a href="pets-detail.html" class="gallery-name">Loki</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption">Кот</span>
-                                <span class="like-counter">11 лайков</span>
-                                <div class="like-icon pressed"></div>
+                                <button class="likes-counter pressed">326</button>
                             </div>
                         </figcaption>
                     </figure>
                     <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                                src="images/gallery3.jpg" alt=""></a>
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery3.jpg" alt=""></a>
                         <figcaption class="gallery-description">
                             <a href="pets-detail.html" class="gallery-name">Bob</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption young">Котенок</span>
-                                <span class="like-counter">326 лайка</span>
-                                <div class="like-icon"></div>
+                                <button class="likes-counter">2</button>
                             </div>
                         </figcaption>
                     </figure>
                     <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                                src="images/gallery4.jpg" alt=""></a>
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery4.jpg" alt=""></a>
                         <figcaption class="gallery-description">
                             <a href="pets-detail.html" class="gallery-name">Loki</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption">Кот</span>
-                                <span class="like-counter">11 лайков</span>
-                                <div class="like-icon pressed"></div>
+                                <button class="likes-counter">1</button>
                             </div>
                         </figcaption>
                     </figure>
