@@ -8,91 +8,82 @@
     <link rel="icon" href="icons/logo-dark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/time.js"></script>
-    <script src="js/theme.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="js/swiperIndex.js"></script>
+    <script defer src="js/theme.js"></script>
     <script defer src="js/likes.js"></script>
+    <script defer src="js/index.js"></script>
 </head>
 
 <body>
     <header class="header">
-
-        <input id="burger-checkbox" type="checkbox">
-        <label class="burger" for="burger-checkbox">
+        <label class="burger">
+            <input type="checkbox">
             <span class="burger-line"></span>
             <span class="burger-line"></span>
             <span class="burger-line"></span>
         </label>
-
-        <aside id="header-menu">
-            <img class="menu-logo" src="icons/logo.svg" alt="">
-            
-            <nav class="menu">
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <a class="menu-link active" href="index.html">
-                            <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
-                            <span class="menu-name">Home</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="pets.html">
-                            <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
-                            <span class="menu-name">Pets</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="blog.html">
-                            <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
-                            <span class="menu-name">Blog</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="">
-                            <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
-                            <span class="menu-name">Chat</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="profile.html">
-                            <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
-                            <span class="menu-name">Profile</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="">
-                            <img class="menu-icon blue" src="icons/logout.svg" alt="">
-                            <span class="menu-name">Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        
+        <nav id="menu">
+            <img class="menu-logo" src="icons/logo.svg" alt="Логотип">
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a class="menu-link active" href="index.html">
+                        <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
+                        <span class="menu-name">Home</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="pets.html">
+                        <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
+                        <span class="menu-name">Pets</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="blog.html">
+                        <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
+                        <span class="menu-name">Blog</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="">
+                        <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
+                        <span class="menu-name">Chat</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="profile.html">
+                        <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
+                        <span class="menu-name">Profile</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="">
+                        <img class="menu-icon blue" src="icons/logout.svg" alt="">
+                        <span class="menu-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <h1 class="header-title">Home</h1>
-
-        <input id="switcher-checkbox" type="checkbox">
-        <label class="header-switcher" for="switcher-checkbox">
-            <span class="switcher"></span>
+        <label class="theme-switcher">
+            <input type="checkbox">
+            <span class="theme-checkbox"></span>
         </label>
-
-        <div class="header-push"></div>
+        <button class="notifications active"></button>
         <a class="profile-image" href="profile.html" style="background-image: url('images/profile.jpg')"></a>
     </header>
     <main>
         <div class="main">
-            <article class="welcome box">
+            <div class="welcome box">
                 <div class="welcome-text">
                     <p>С возвращением, Владимир</p>
                     <p>Не забудь покормить своего питомца</p>
                     <p>Хорошего дня!</p>
                 </div>
                 <img class="welcome-image" src="images/img1.png" alt="">
-            </article>
-            <article class="useful swiper">
-                <div class="useful-list swiper-wrapper">
-                    <section class="activity box swiper-slide">
+            </div>
+            <div class="compact swiper">
+                <div class="compact-list swiper-wrapper">
+                    <div class="activity box swiper-slide">
                         <div class="activity-graph">
                             <div class="pie-wrap">
                                 <div class="pie">62%</div>
@@ -110,22 +101,22 @@
                                 <li class="progress-item">Игры</li>
                             </ul>
                         </div>
-                    </section>
-                    <section class="clock box swiper-slide">
+                    </div>
+                    <div class="clock box swiper-slide">
                         <div class="clock-row box">
-                            <span class="clock-item">На часах у нас</span>
+                            <span class="clock-title">На часах у нас</span>
                             <time id="time" datetime="2021-10-05T03:46">3:46</time>
                         </div>
                         <div class="clock-row box">
-                            <span class="clock-item">На календаре у нас</span>
+                            <span class="clock-title">На календаре у нас</span>
                             <time id="date" datetime="2021-10-05">05.10.2021</time>
                         </div>
-                    </section>
+                    </div>
                 </div>
-            </article>
-            <article class="statistics box">
-                <figure class="statistics-cover">
-                    <div class="swiper cover">
+            </div>
+            <div class="statistics box">
+                <div class="statistics-cover">
+                    <div class="cover swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img class="cover-image" src="images/img4.jpg" alt="">
@@ -134,19 +125,18 @@
                                 <img class="cover-image" src="images/gallery1.jpg" alt="">
                             </div>
                         </div>
-                        <div class="cover-shadow"></div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
-                    <figcaption class="cover-description">
+                    <div class="cover-description">
                         <span class="cover-name">Johny</span>
                         <span>3 лайка</span>
-                    </figcaption>
-                </figure>
+                    </div>
+                </div>
                 <div class="statistics-diagram">
                     <div class="diagram-description">
-                        <span class="diagram-line">Лайки</span>
-                        <span class="diagram-line">Просмотры</span>
+                        <span class="diagram-caption">Лайки</span>
+                        <span class="diagram-caption">Просмотры</span>
                     </div>
                     <div class="diagram">
                         <div class="diagram-column">
@@ -186,8 +176,8 @@
                         </div>
                     </div>
                 </div>
-            </article>
-            <article class="chat swiper">
+            </div>
+            <div class="chat swiper">
                 <div class="chat-list swiper-wrapper">
                     <div class="chat-item box swiper-slide">
                         <div class="chat-info">
@@ -202,13 +192,13 @@
                                 </div>
                             </div>
                         </div>
-                        <article class="chat-message">
+                        <div class="chat-message">
                             <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
                                 выпрыгнет
                                 утка.</p>
                             <p>Я его уже не уговариваю.</p>
                             <p>Он так сидит уже несколько лет.</p>
-                        </article>
+                        </div>
                     </div>
                     <div class="chat-item box swiper-slide">
                         <div class="chat-info">
@@ -223,9 +213,9 @@
                                 </div>
                             </div>
                         </div>
-                        <article class="chat-message">
+                        <div class="chat-message">
                             <p>Если собаку гладить против шерсти, то она кусаться будет.</p>
-                        </article>
+                        </div>
                     </div>
                     <div class="chat-item box swiper-slide">
                         <div class="chat-info">
@@ -240,12 +230,12 @@
                                 </div>
                             </div>
                         </div>
-                        <article class="chat-message">
+                        <div class="chat-message">
                             <p>Жил да был как-то хомяк, он любил играть с прищепками и был одинок, и решил
                                 создать семью, которая состояла из хомячихи и двух хомячат. И вот однажды в
                                 доме
                                 появился еще один хомяк</p>
-                        </article>
+                        </div>
                     </div>
                     <div class="chat-item box swiper-slide">
                         <div class="chat-info">
@@ -260,11 +250,11 @@
                                 </div>
                             </div>
                         </div>
-                        <article class="chat-message">
+                        <div class="chat-message">
                             <p>Что делать если кот укусил собаку? Прочитать эту историю. Кот укусил собаку.
                                 Собака укусила кошку. А кошка, случайно, укусила человека. И теперь на нем
                                 живого места нет!</p>
-                        </article>
+                        </div>
                     </div>
                     <div class="chat-item box swiper-slide">
                         <div class="chat-info">
@@ -279,65 +269,69 @@
                                 </div>
                             </div>
                         </div>
-                        <article class="chat-message">
+                        <div class="chat-message">
                             <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
                                 выпрыгнет
                                 утка.</p>
                             <p>Я его уже не уговариваю.</p>
                             <p>Он так сидит уже несколько лет.</p>
-                        </article>
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-            </article>
-            <article class="gallery swiper">
+            </div>
+            <div class="gallery swiper">
                 <div class="gallery-list swiper-wrapper">
-                    <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery1.jpg" alt=""></a>
-                        <figcaption class="gallery-description">
-                            <a href="pets-detail.html" class="gallery-name">Bob</a>
+                    <div class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                                src="images/gallery1.jpg" alt=""></a>
+                        <div class="gallery-description">
+                            <a class="gallery-name" href="pets-detail.html">Bob</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption young">Котенок</span>
                                 <button class="likes-counter">321</button>
                             </div>
-                        </figcaption>
-                    </figure>
-                    <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery2.jpg" alt=""></a>
-                        <figcaption class="gallery-description">
-                            <a href="pets-detail.html" class="gallery-name">Loki</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                                src="images/gallery2.jpg" alt=""></a>
+                        <div class="gallery-description">
+                            <a class="gallery-name" href="pets-detail.html">Loki</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption">Кот</span>
                                 <button class="likes-counter pressed">326</button>
                             </div>
-                        </figcaption>
-                    </figure>
-                    <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery3.jpg" alt=""></a>
-                        <figcaption class="gallery-description">
-                            <a href="pets-detail.html" class="gallery-name">Bob</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                                src="images/gallery3.jpg" alt=""></a>
+                        <div class="gallery-description">
+                            <a class="gallery-name" href="pets-detail.html">Bob</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption young">Котенок</span>
                                 <button class="likes-counter">2</button>
                             </div>
-                        </figcaption>
-                    </figure>
-                    <figure class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image" src="images/gallery4.jpg" alt=""></a>
-                        <figcaption class="gallery-description">
-                            <a href="pets-detail.html" class="gallery-name">Loki</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item box swiper-slide">
+                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                                src="images/gallery4.jpg" alt=""></a>
+                        <div class="gallery-description">
+                            <a class="gallery-name" href="pets-detail.html">Loki</a>
                             <div class="gallery-info">
                                 <span class="gallery-caption">Кот</span>
                                 <button class="likes-counter">1</button>
                             </div>
-                        </figcaption>
-                    </figure>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-            </article>
-            <article class="users box">
+            </div>
+            <div class="users box">
                 <div class="users-wrapper">
                     <div class="profile-image yellow-gradient">r</div>
                     <div class="profile-image purple-gradient">t</div>
@@ -348,10 +342,9 @@
                     <div class="profile-image">+</div>
                 </div>
                 <button class="button small">Напиши сейчас</button>
-            </article>
+            </div>
         </div>
     </main>
-
 </body>
 
 </html>

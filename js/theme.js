@@ -5,10 +5,10 @@ function switchTheme() {
 
     if (theme == 'light') {
         document.body.classList.toggle("light-theme");
-        document.getElementById("switcher-checkbox").checked = true;
+        document.querySelector('.theme-switcher input').checked = true;
     }
 
-    document.getElementById('switcher-checkbox').addEventListener('click', function () {
+    document.querySelector('.theme-switcher input').addEventListener('click', function () {
         if (document.body.classList.toggle("light-theme")) {
             localStorage.setItem("theme", "light");
         } else {

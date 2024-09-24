@@ -10,7 +10,7 @@
     display: none;
 }
 
-.header-push {
+.push {
     display: none;
 }
 
@@ -271,7 +271,7 @@
         display: flex;
     }
 
-    .header-push {
+    .push {
         display: block;
     }
     .profile-image {

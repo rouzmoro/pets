@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/blog.css">
     <script src="js/textarea.js"></script>
-    <script src="js/theme.js"></script>
+    <script defer src="js/theme.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script defer src="js/masonryBlog.js"></script>
     <script defer src="js/imagesInput.js"></script>
@@ -18,61 +18,59 @@
 
 <body>
     <header class="header">
-        <input id="burger-checkbox" type="checkbox">
-        <label class="burger" for="burger-checkbox">
+        <label class="burger">
+            <input type="checkbox">
             <span class="burger-line"></span>
             <span class="burger-line"></span>
             <span class="burger-line"></span>
         </label>
-        <aside id="header-menu">
-            <img class="menu-logo" src="icons/logo.svg" alt="">
-            <nav class="menu">
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <a class="menu-link" href="index.html">
-                            <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
-                            <span class="menu-name">Home</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="pets.html">
-                            <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
-                            <span class="menu-name">Pets</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link active" href="blog.html">
-                            <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
-                            <span class="menu-name">Blog</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="">
-                            <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
-                            <span class="menu-name">Chat</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="profile.html">
-                            <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
-                            <span class="menu-name">Profile</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="">
-                            <img class="menu-icon blue" src="icons/logout.svg" alt="">
-                            <span class="menu-name">Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+        <nav id="menu">
+            <img class="menu-logo" src="icons/logo.svg" alt="Логотип">
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a class="menu-link" href="index.html">
+                        <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
+                        <span class="menu-name">Home</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="pets.html">
+                        <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
+                        <span class="menu-name">Pets</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link active" href="blog.html">
+                        <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
+                        <span class="menu-name">Blog</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="">
+                        <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
+                        <span class="menu-name">Chat</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="profile.html">
+                        <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
+                        <span class="menu-name">Profile</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="">
+                        <img class="menu-icon blue" src="icons/logout.svg" alt="">
+                        <span class="menu-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <h1 class="header-title">Новости</h1>
-        <input id="switcher-checkbox" type="checkbox">
-        <label class="header-switcher" for="switcher-checkbox">
-            <span class="switcher"></span>
+        <label class="theme-switcher">
+            <input type="checkbox">
+            <span class="theme-checkbox"></span>
         </label>
-        <div class="header-push"></div>
+        <button class="notifications active"></button>
         <a class="profile-image" href="profile.html" style="background-image: url('images/profile.jpg')"></a>
     </header>
     <main>
@@ -132,7 +130,7 @@
 
                 <div class="chat-item box">
                     <div class="chat-info">
-                        <div class="profile-image orange-gradient">R</div>
+                        <div class="profile-image orange-gradient online">R</div>
                         <div class="chat-wrap">
                             <div class="chat-wrap-line">
                                 <span class="chat-name">Rat</span>
