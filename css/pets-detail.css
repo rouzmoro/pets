@@ -1,54 +1,38 @@
 .header {
-    display: contents;
-}
-
-.burger {
-    display: none;
-}
-
-.header-switcher {
-    display: none;
-}
-
-.push {
-    display: none;
-}
-
-.profile-image {
-    display: none;
+    visibility: hidden;
 }
 
 .pets-detail {
-    grid-column: span 2;
+    --swiper-theme-color: var(--solid-primary);
     margin: 0 -25px;
     margin-top: -92px;
-    --swiper-theme-color: var(--solid-primary);
+    grid-column: span 2;
 }
 
 .pets-detail-wrapper {
-    grid-column: span 2;
     display: flex;
     flex-direction: column;
+    grid-column: span 2;
     gap: 30px;
 }
 
 .pets-detail-breed {
     display: flex;
-    gap: 7px;
     align-items: center;
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--solid-light-gray);
     line-height: 17px;
     margin-top: -15px;
+    color: var(--solid-light-gray);
+    font-size: 14px;
+    font-weight: 500;
+    gap: 7px;
 }
 
 .breed-separator {
     flex-shrink: 0;
     width: 3px;
     height: 3px;
-    background: #98a1bd;
     border-radius: 50%;
+    background: #98a1bd;
 }
 
 .pets-detail-separator {
@@ -64,36 +48,36 @@
 
 .counter-row {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 10px;
-    font-weight: 500;
-    font-size: 14px;
+    flex-direction: row;
     line-height: 15px;
     color: var(--solid-primary-light);
     text-wrap: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 10px;
 }
 
 .counter-row .like-icon {
-    height: 15px;
     width: 16px;
+    height: 15px;
 }
 
 .counter-row .cost-icon {
-    height: 15px;
     width: 16px;
+    height: 15px;
 }
 
 .pets-detail-table {
     display: grid;
     width: auto;
+    width: fit-content;
+    color: var(--solid-light-gray);
+    font-size: 12px;
+    font-weight: 500;
     grid-template-columns: auto auto auto;
     row-gap: 15px;
     column-gap: 30px;
-    width: fit-content;
-    font-weight: 500;
-    font-size: 12px;
-    color: var(--solid-light-gray);
 }
 
 .table-head {
@@ -126,31 +110,31 @@
 .pets-detail-image {
     width: 100%;
     height: 290px;
-    object-fit: cover;
     border-radius: 0 0 20px 20px;
+    object-fit: cover;
 }
 
 .description-title {
-    font-weight: 500;
-    font-size: 12px;
     line-height: 108%;
-    color: var(--solid-primary-light)
+    color: var(--solid-primary-light);
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .description-text {
-    font-weight: 300;
-    font-size: 16px;
     line-height: 140%;
     color: var(--solid-primary-light);
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .pets-detail-caption {
     display: flex;
-    gap: 5px;
     height: 37px;
-    font-weight: 700;
-    font-size: 34px;
     color: var(--solid-primary-light);
+    font-size: 34px;
+    font-weight: 700;
+    gap: 5px;
 }
 
 .caption-name {
@@ -163,29 +147,30 @@
 }
 
 .return {
-    display: block;
     position: absolute;
+    z-index: 2;
     top: 20px;
     left: 20px;
-    height: 40px;
+    display: block;
+    visibility: visible;
     width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border: none;
     border-radius: 50%;
     background-color: var(--solid-primary-light);
     background-image: url('../icons/return.svg');
     background-repeat: no-repeat;
     background-position: center;
-    border: none;
-    margin: 0;
-    padding: 0;
     cursor: pointer;
-    z-index: 2;
 }
 
 @media (min-width: 768px) {
 
     .pets-detail {
-        grid-column: span 5;
         margin-top: -100px;
+        grid-column: span 5;
     }
 
     .pets-detail .swiper-pagination {
@@ -235,8 +220,8 @@
     }
 
     .counter-row {
-        font-size: 18px;
         line-height: 19px;
+        font-size: 18px;
     }
 
     .pets-detail-table {
@@ -248,7 +233,7 @@
     }
 
     .description-text {
-        font-size: 20px
+        font-size: 20px;
     }
 
 }
@@ -256,32 +241,20 @@
 @media (min-width: 1280px) {
 
     .header {
-        display: flex;
+        visibility: visible;
     }
 
     .return {
-        display: block;
         position: static;
-        background-image: url('../icons/return2.svg');
-        background-color: transparent;
         margin-right: 15px;
-    }
-
-    .header-switcher {
-        display: flex;
-    }
-
-    .push {
-        display: block;
-    }
-    .profile-image {
-        display: inline-grid;
+        background-color: transparent;
+        background-image: url('../icons/return2.svg');
     }
 
     .pets-detail {
-        grid-column: span 6;
-        margin: 0;
         padding: 0 20px;
+        margin: 0;
+        grid-column: span 6;
     }
 
     .pets-detail .swiper-pagination {
@@ -323,8 +296,8 @@
     }
 
     .pets-detail .swiper-slide {
-        transition: translate .3s, height .3s, opacity .3s;
         opacity: 0;
+        transition: translate .3s, height .3s, opacity .3s;
     }
 
     .pets-detail .swiper-slide-active {
@@ -337,9 +310,9 @@
     }
 
     .pets-detail .swiper-slide-next {
+        z-index: -1;
         height: calc(100% - 100px);
         translate: calc(-100% + 20px);
-        z-index: -1;
     }
 
     .pets-detail .swiper-slide-prev {
@@ -348,8 +321,8 @@
     }
 
     .pets-detail-image {
-        border-radius: 10px;
         height: 100%;
+        border-radius: 10px;
     }
 
     .pets-detail-wrapper {
@@ -364,8 +337,8 @@
     }
 
     .pets-detail-breed {
-        font-size: 20px;
         line-height: 24px;
+        font-size: 20px;
     }
 
     .breed-separator {
@@ -378,18 +351,18 @@
     }
 
     .counter-row {
-        font-size: 20px;
         line-height: 22px;
+        font-size: 20px;
     }
 
     .counter-row .like-icon {
-        height: 22px;
         width: 24px;
+        height: 22px;
     }
 
     .counter-row .cost-icon {
-        height: 22px;
         width: 22px;
+        height: 22px;
     }
 
     .pets-detail-separator {
@@ -405,8 +378,8 @@
     }
 
     .description-text {
-        font-size: 22px;
         overflow: auto;
+        font-size: 22px;
     }
 
 }
@@ -414,8 +387,8 @@
 @media (min-width: 1920px) {
 
     .pets-detail {
-        grid-column: span 5;
         padding: 0 50px;
+        grid-column: span 5;
     }
 
     .pets-detail .swiper-pagination {
@@ -460,8 +433,8 @@
     }
 
     .pets-detail-caption {
-        font-size: 72px;
         height: 78px;
+        font-size: 72px;
     }
 
     .caption-icon {
@@ -470,8 +443,8 @@
     }
 
     .pets-detail-breed {
-        font-size: 32px;
         line-height: 38px;
+        font-size: 32px;
     }
 
     .pets-detail-counters {
@@ -479,18 +452,18 @@
     }
 
     .counter-row {
-        font-size: 32px;
         line-height: 35px;
+        font-size: 32px;
     }
 
     .counter-row .like-icon {
-        height: 26px;
         width: 27px;
+        height: 26px;
     }
 
     .counter-row .cost-icon {
-        height: 28px;
         width: 28px;
+        height: 28px;
     }
 
     .pets-detail-table {
