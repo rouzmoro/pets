@@ -268,7 +268,7 @@ input:-internal-autofill-selected {
     display: none;
 }
 
-.radio {;
+.radio {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,7 +289,7 @@ input:-internal-autofill-selected {
     transition: width .2s, height .2s;
 }
 
-.input-radio:checked ~ .radio::after {
+.input-radio:checked~.radio::after {
     width: 14px;
     height: 14px;
 }
@@ -312,7 +312,7 @@ input:-internal-autofill-selected {
     cursor: pointer;
 }
 
-.input-checkbox:checked ~ .checkbox {
+.input-checkbox:checked~.checkbox {
     background: var(--solid-primary);
 }
 
@@ -328,7 +328,7 @@ input:-internal-autofill-selected {
     content: '';
 }
 
-.input-checkbox:checked ~ .checkbox::before {
+.input-checkbox:checked~.checkbox::before {
     translate: 17px;
 }
 
@@ -451,7 +451,7 @@ input:-internal-autofill-selected {
     rotate: -45deg;
 }
 
-.burger:has(input:checked) ~ #menu {
+.burger:has(input:checked)~#menu {
     scale: 1;
 }
 
@@ -634,10 +634,11 @@ input:-internal-autofill-selected {
     from {
         scale: 0;
     }
+
     to {
         scale: 1;
     }
-  }
+}
 
 .header .profile-image {
     margin-left: -10px;
@@ -830,8 +831,8 @@ input:-internal-autofill-selected {
 
 @keyframes moving {
     from {
-        --percent: 0
-    ;}
+        --percent: 0;
+    }
 }
 
 /*activity end*/
@@ -1186,15 +1187,17 @@ input:-internal-autofill-selected {
 }
 
 .chat-message {
-    overflow: hidden;
     line-height: 22px;
-    transition: translate .3s;
-    max-height: 88px;
+    transition: margin .3s;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .chat .swiper-slide-prev .chat-message,
 .chat .swiper-slide-next .chat-message {
-    translate: 0 -63px;
+    margin-top: -70px;
 }
 
 /*chat end*/
@@ -1747,7 +1750,7 @@ input:-internal-autofill-selected {
     transition: width .2s;
 }
 
-.step.active + .step-separator::before {
+.step.active+.step-separator::before {
     width: 50%;
     transition: width .2s .4s;
 }
@@ -2078,11 +2081,11 @@ input:-internal-autofill-selected {
     gap: 30px;
 }
 
-.pets-input-container > * {
+.pets-input-container>* {
     width: calc(50% - 15px);
 }
 
-.pets-input-container > *:nth-last-child(5):first-child {
+.pets-input-container>*:nth-last-child(5):first-child {
     width: 100%;
 }
 
@@ -2155,7 +2158,7 @@ input:-internal-autofill-selected {
         width: 98px;
         height: 6px;
     }
-    
+
     .step-separator::before {
         height: 6px;
     }
@@ -2269,7 +2272,7 @@ input:-internal-autofill-selected {
     .theme-switcher {
         height: 46px;
     }
-    
+
     .theme-switcher::before,
     .theme-switcher::after {
         width: 53px;
@@ -2279,7 +2282,7 @@ input:-internal-autofill-selected {
     .theme-switcher::after {
         margin-left: -6px;
     }
-        
+
     .theme-checkbox {
         width: 53px;
     }
@@ -2443,7 +2446,7 @@ input:-internal-autofill-selected {
 
     .chat .swiper-slide-prev .chat-message,
     .chat .swiper-slide-next .chat-message {
-        translate: 0;
+        margin: 0;
     }
 
     .chat .swiper-button-next {
@@ -2617,12 +2620,12 @@ input:-internal-autofill-selected {
     /*sidebar end*/
 
     /*switcher*/
-    
+
     .theme-switcher::after {
         width: 32px;
         margin-left: 0;
     }
-        
+
     .theme-switcher:has(input:checked)::before {
         translate: -10px;
     }
@@ -2630,7 +2633,7 @@ input:-internal-autofill-selected {
     .theme-switcher:has(input:checked)::after {
         translate: -10px;
     }
-    
+
     .theme-switcher:has(input:checked) .theme-checkbox {
         translate: 32px;
     }
@@ -2797,6 +2800,10 @@ input:-internal-autofill-selected {
         grid-row: 3/4;
     }
 
+    .chat-message {
+        -webkit-line-clamp: 6;
+    }
+
     /*chat*/
 
     /*swiper*/
@@ -2864,7 +2871,7 @@ input:-internal-autofill-selected {
         width: 53px;
         margin-left: -6px;
     }
-        
+
     .theme-switcher:has(input:checked)::before {
         translate: 0;
     }
@@ -2872,7 +2879,7 @@ input:-internal-autofill-selected {
     .theme-switcher:has(input:checked)::after {
         translate: 0;
     }
-    
+
     .theme-switcher:has(input:checked) .theme-checkbox {
         translate: 47px;
     }
@@ -2967,6 +2974,10 @@ input:-internal-autofill-selected {
         grid-row: 3/4;
     }
 
+    .chat-message {
+        -webkit-line-clamp: 4;
+    }
+
     /*chat end*/
 
     /*gallery*/
@@ -3042,7 +3053,7 @@ body.light-theme {
     --pie-color: #edf2f7;
     --diagram-color: #edf2f7;
     --border-color: #d5d5dc;
-  }
+}
 
 body.light-theme .menu-logo {
     filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
@@ -3094,6 +3105,3 @@ body.light-theme .gender-label:has(input:checked)::after {
 body.light-theme .gender-label:has(input:checked)::before {
     filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(5976%) hue-rotate(190deg) brightness(94%) contrast(95%);
 }
-
-
-
