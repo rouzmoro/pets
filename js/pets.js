@@ -1,3 +1,28 @@
+/*swiper*/
+
+var swiper = undefined;
+const breakpoint = window.matchMedia("(max-width: 767px)");
+
+const breakpointChecker = () => {
+
+    if (breakpoint.matches) {
+        swiper = new Swiper(".pets-menu", {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 20,
+        });
+    } else if (swiper != undefined) {
+        swiper.destroy();
+    }
+};
+
+breakpoint.addEventListener("change", breakpointChecker);
+breakpointChecker();
+
+/*swiper end*/
+
+/*buttons*/
+
 function showAnimals(animals, element) {
     if ( element.classList.contains('pets-menu-item-active') ) {
         for (let animal of animals) {
@@ -42,3 +67,5 @@ others.addEventListener("click", function() {
     let animals = document.querySelectorAll('.other');
     showAnimals(animals, this);
 })
+
+/*buttons end*/

@@ -504,6 +504,8 @@ input:-internal-autofill-selected {
     display: flex;
     align-items: center;
     color: var(--text-color);
+    font-size: 16px;
+    font-weight: 700;
     text-decoration: none;
     gap: 10px;
 }
@@ -805,8 +807,7 @@ input:-internal-autofill-selected {
     background: conic-gradient(var(--color) calc(var(--percent) * 1%), transparent 0) border-box;
     animation: moving 1s .5s both;
     inset: 0;
-    mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
-    mask-composite: exclude;
+    mask: linear-gradient(#000, #000) content-box exclude, linear-gradient(#000, #000);
 }
 
 .pie-extra:before,
@@ -1187,12 +1188,12 @@ input:-internal-autofill-selected {
 }
 
 .chat-message {
+    display: -webkit-box;
+    overflow: hidden;
     line-height: 22px;
     transition: margin .3s;
-    display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .chat .swiper-slide-prev .chat-message,
