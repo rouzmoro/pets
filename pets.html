@@ -16,63 +16,63 @@
 
 <body>
     <header class="header">
-        <label class="burger">
-            <input type="checkbox">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
+        <label class="header__burger burger">
+            <input class="burger__checkbox" type="checkbox">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
         </label>
-        <nav id="menu">
-            <img class="menu-logo" src="icons/logo.svg" alt="Логотип">
-            <ul class="menu-list">
-                <li class="menu-item">
-                    <a class="menu-link" href="index.html">
-                        <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
-                        <span class="menu-name">Home</span>
+        <nav class="header__menu menu">
+            <img class="menu__logo" src="icons/logo.svg" alt="Логотип">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link" href="index.html">
+                        <img class="menu__icon purple-gradient" src="icons/home.svg" alt="">
+                        <span class="menu__name">Home</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link active" href="pets.html">
-                        <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
-                        <span class="menu-name">Pets</span>
+                <li class="menu__item">
+                    <a class="menu__link menu__link--active" href="pets.html">
+                        <img class="menu__icon orange-gradient" src="icons/pets.svg" alt="">
+                        <span class="menu__name">Pets</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="blog.html">
-                        <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
-                        <span class="menu-name">Blog</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="blog.html">
+                        <img class="menu__icon yellow-gradient" src="icons/blog.svg" alt="">
+                        <span class="menu__name">Blog</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">
-                        <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
-                        <span class="menu-name">Chat</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="">
+                        <img class="menu__icon pink-gradient" src="icons/chat.svg" alt="">
+                        <span class="menu__name">Chat</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="profile.html">
-                        <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
-                        <span class="menu-name">Profile</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="profile.html">
+                        <img class="menu__icon green-gradient" src="icons/person.svg" alt="">
+                        <span class="menu__name">Profile</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">
-                        <img class="menu-icon blue" src="icons/logout.svg" alt="">
-                        <span class="menu-name">Logout</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="">
+                        <img class="menu__icon blue" src="icons/logout.svg" alt="">
+                        <span class="menu__name">Logout</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        <h1 class="header-title">Питомцы</h1>
-        <label class="theme-switcher">
-            <input type="checkbox">
-            <span class="theme-checkbox"></span>
+        <h1 class="header__title">Питомцы</h1>
+        <label class="header__switcher switcher switcher--theme">
+            <input class="switcher__checkbox" type="checkbox">
+            <span class="switcher__button"></span>
         </label>
-        <button class="notifications active"></button>
-        <a class="profile-image" href="profile.html">JD</a>
+        <button class="header__notices header__notices--active"></button>
+        <div class="header__profile-image profile-image">JD</div>
     </header>
-    <main>
-        <div class="main">
+    <main class="main">
+        <div class="content">
             <nav class="pets-menu swiper">
                 <ul class="pets-menu-list swiper-wrapper">
                     <li class="pets-menu-item swiper-slide pets-menu-item-active" id="cats">

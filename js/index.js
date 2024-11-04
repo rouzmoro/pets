@@ -22,7 +22,7 @@ updateTime();
 
 /*swiper*/
 
-let chat = new Swiper(".chat", {
+let chat = new Swiper(".blog", {
     slidesPerView: 'auto',
     spaceBetween: 15,
     loop: true,
@@ -84,7 +84,7 @@ let gallery = new Swiper(".gallery", {
     },
 });
 
-let cover = new Swiper(".cover", {
+let cover = new Swiper(".cover__wrapper", {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

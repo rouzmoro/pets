@@ -16,184 +16,185 @@
 
 <body>
     <header class="header">
-        <label class="burger">
-            <input type="checkbox">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
+        <label class="header__burger burger">
+            <input class="burger__checkbox" type="checkbox">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
         </label>
-        <nav id="menu">
-            <img class="menu-logo" src="icons/logo.svg" alt="Логотип">
-            <ul class="menu-list">
-                <li class="menu-item">
-                    <a class="menu-link active" href="index.html">
-                        <img class="menu-icon purple-gradient" src="icons/home.svg" alt="">
-                        <span class="menu-name">Home</span>
+        <nav class="header__menu menu">
+            <img class="menu__logo" src="icons/logo.svg" alt="Логотип">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link menu__link--active" href="index.html">
+                        <img class="menu__icon purple-gradient" src="icons/home.svg" alt="">
+                        <span class="menu__name">Home</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="pets.html">
-                        <img class="menu-icon orange-gradient" src="icons/pets.svg" alt="">
-                        <span class="menu-name">Pets</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="pets.html">
+                        <img class="menu__icon orange-gradient" src="icons/pets.svg" alt="">
+                        <span class="menu__name">Pets</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="blog.html">
-                        <img class="menu-icon yellow-gradient" src="icons/blog.svg" alt="">
-                        <span class="menu-name">Blog</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="blog.html">
+                        <img class="menu__icon yellow-gradient" src="icons/blog.svg" alt="">
+                        <span class="menu__name">Blog</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">
-                        <img class="menu-icon pink-gradient" src="icons/chat.svg" alt="">
-                        <span class="menu-name">Chat</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="">
+                        <img class="menu__icon pink-gradient" src="icons/chat.svg" alt="">
+                        <span class="menu__name">Chat</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="profile.html">
-                        <img class="menu-icon green-gradient" src="icons/person.svg" alt="">
-                        <span class="menu-name">Profile</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="profile.html">
+                        <img class="menu__icon green-gradient" src="icons/person.svg" alt="">
+                        <span class="menu__name">Profile</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">
-                        <img class="menu-icon blue" src="icons/logout.svg" alt="">
-                        <span class="menu-name">Logout</span>
+                <li class="menu__item">
+                    <a class="menu__link" href="">
+                        <img class="menu__icon blue" src="icons/logout.svg" alt="">
+                        <span class="menu__name">Logout</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        <h1 class="header-title">Home</h1>
-        <label class="theme-switcher">
-            <input type="checkbox">
-            <span class="theme-checkbox"></span>
+        <h1 class="header__title">Главная</h1>
+        <label class="header__switcher switcher switcher--theme">
+            <input class="switcher__checkbox" type="checkbox">
+            <span class="switcher__button"></span>
         </label>
-        <button class="notifications active"></button>
-        <a class="profile-image" href="profile.html" style="background-image: url('images/profile.jpg')"></a>
+        <button class="header__notices header__notices--active"></button>
+        <div class="header__profile-image profile-image" style="background-image: url('images/profile.jpg')"></div>
     </header>
-    <main>
-        <div class="main">
-            <div class="welcome box">
-                <div class="welcome-text">
+    <main class="main">
+        <div class="main__content content">
+            <div class="content__welcome welcome box">
+                <div class="welcome__text">
                     <p>С возвращением, Владимир</p>
                     <p>Не забудь покормить своего питомца</p>
                     <p>Хорошего дня!</p>
                 </div>
-                <img class="welcome-image" src="images/img1.png" alt="">
+                <img class="welcome__image" src="images/img1.png" alt="">
             </div>
-            <div class="compact swiper">
-                <div class="compact-list swiper-wrapper">
-                    <div class="activity box swiper-slide">
-                        <div class="activity-graph">
-                            <div class="pie-wrap">
-                                <div class="pie">62%</div>
-                                <div class="pie-extra" style="--percent: 62; --color: #F16063"></div>
-                                <div class="pie-extra" style="--percent: 40; --color: #FFEF5E"></div>
-                                <div class="pie-extra" style="--percent: 20; --color: #66CB9F"></div>
+            <div class="content__compact compact swiper">
+                <div class="compact__list swiper-wrapper">
+                    <div class="compact__activity activity box swiper-slide">
+                        <div class="activity__pie pie">
+                            <div class="pie__circle">
+                                <div class="pie__percent">62%</div>
+                                <div class="pie__item pie__item--blue" style="--percent: 70"></div>
+                                <div class="pie__item pie__item--green" style="--percent: 62"></div>
+                                <div class="pie__item pie__item--yellow" style="--percent: 40"></div>
+                                <div class="pie__item pie__item--red" style="--percent: 20"></div>
                             </div>
                         </div>
-                        <div class="activity-progress">
-                            <h2 class="progress-title">Ежедневный прогресс</h2>
-                            <ul class="progress-list">
-                                <li class="progress-item no">Прогулка в парке</li>
-                                <li class="progress-item yes">Обед</li>
-                                <li class="progress-item yes">Перекус 1/2</li>
-                                <li class="progress-item">Игры</li>
+                        <div class="activity__progress">
+                            <h2 class="activity__title">Ежедневный прогресс</h2>
+                            <ul class="activity__list">
+                                <li class="activity__item activity__item--unchecked">Прогулка в парке</li>
+                                <li class="activity__item activity__item--checked">Обед</li>
+                                <li class="activity__item activity__item--checked">Перекус 1/2</li>
+                                <li class="activity__item">Игры</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="clock box swiper-slide">
-                        <div class="clock-row box">
-                            <span class="clock-title">На часах у нас</span>
-                            <time id="time" datetime="2021-10-05T03:46">3:46</time>
+                    <div class="compact__clock clock box swiper-slide">
+                        <div class="clock__item box">
+                            <span class="clock__title">На часах у нас</span>
+                            <time class="clock__time" id="time" datetime="2021-10-05T03:46">3:46</time>
                         </div>
-                        <div class="clock-row box">
-                            <span class="clock-title">На календаре у нас</span>
-                            <time id="date" datetime="2021-10-05">05.10.2021</time>
+                        <div class="clock__item box">
+                            <span class="clock__title">На календаре у нас</span>
+                            <time class="clock__date" id="date" datetime="2021-10-05">05.10.2021</time>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="statistics box">
-                <div class="statistics-cover">
-                    <div class="cover swiper">
+            <div class="content__stats stats box">
+                <div class="stats__cover cover">
+                    <div class="cover__wrapper swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img class="cover-image" src="images/img4.jpg" alt="">
+                                <img class="cover__image" src="images/img4.jpg" alt="">
                             </div>
                             <div class="swiper-slide">
-                                <img class="cover-image" src="images/gallery1.jpg" alt="">
+                                <img class="cover__image" src="images/gallery1.jpg" alt="">
                             </div>
                         </div>
-                        <div class="cover-shadow"></div>
+                        <div class="cover__shadow"></div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="cover-description">
-                        <span class="cover-name">Johny</span>
-                        <span>3 лайка</span>
+                    <div class="cover__desc">
+                        <span class="cover__name">Johny</span>
+                        <span class="cover__likes">3 лайка</span>
                     </div>
                 </div>
-                <div class="statistics-diagram">
-                    <div class="diagram-description">
-                        <span class="diagram-caption">Лайки</span>
-                        <span class="diagram-caption">Просмотры</span>
+                <div class="stats__chart chart">
+                    <div class="chart__desc">
+                        <span class="chart__caption">Лайки</span>
+                        <span class="chart__caption">Просмотры</span>
                     </div>
-                    <div class="diagram">
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 104px; --likes: 28px"></div>
-                            <div class="diagram-date">17</div>
-                            <div class="diagram-day">ПН</div>
+                    <div class="chart__wrapper">
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 104px; --likes: 28px"></div>
+                            <div class="chart__date">17</div>
+                            <div class="chart__day">ПН</div>
                         </div>
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 70px; --likes: 28px"></div>
-                            <div class="diagram-date">18</div>
-                            <div class="diagram-day">ВТ</div>
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 70px; --likes: 28px"></div>
+                            <div class="chart__date">18</div>
+                            <div class="chart__day">ВТ</div>
                         </div>
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 82px; --likes: 28px"></div>
-                            <div class="diagram-date">19</div>
-                            <div class="diagram-day">СР</div>
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 82px; --likes: 28px"></div>
+                            <div class="chart__date">19</div>
+                            <div class="chart__day">СР</div>
                         </div>
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 127px; --likes: 28px"></div>
-                            <div class="diagram-date">20</div>
-                            <div class="diagram-day">ЧТ</div>
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 127px; --likes: 28px"></div>
+                            <div class="chart__date">20</div>
+                            <div class="chart__day">ЧТ</div>
                         </div>
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 95px; --likes: 28px"></div>
-                            <div class="diagram-date">21</div>
-                            <div class="diagram-day">ПТ</div>
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 95px; --likes: 28px"></div>
+                            <div class="chart__date">21</div>
+                            <div class="chart__day">ПТ</div>
                         </div>
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 64px; --likes: 28px"></div>
-                            <div class="diagram-date">22</div>
-                            <div class="diagram-day">СБ</div>
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 64px; --likes: 28px"></div>
+                            <div class="chart__date">22</div>
+                            <div class="chart__day">СБ</div>
                         </div>
-                        <div class="diagram-column">
-                            <div class="diagram-item" style="--views: 95px; --likes: 28px"></div>
-                            <div class="diagram-date">23</div>
-                            <div class="diagram-day">ВС</div>
+                        <div class="chart__column">
+                            <div class="chart__item" style="--views: 95px; --likes: 28px"></div>
+                            <div class="chart__date">23</div>
+                            <div class="chart__day">ВС</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="chat swiper">
-                <div class="chat-list swiper-wrapper">
-                    <div class="chat-item box swiper-slide">
-                        <div class="chat-info">
-                            <div class="profile-image purple-gradient">Y</div>
-                            <div class="chat-wrap">
-                                <div class="chat-wrap-line">
-                                    <span class="chat-name">Ynfan</span>
-                                    <time class="chat-time" datetime="2021-10-05T17:20">17:20</time>
+            <div class="content__blog blog swiper">
+                <div class="blog__list swiper-wrapper">
+                    <div class="blog__post post box swiper-slide">
+                        <div class="post__info">
+                            <div class="post__profile-image profile-image purple-gradient">Y</div>
+                            <div class="post__wrapper">
+                                <div class="post__line">
+                                    <span class="post__name">Ynfan</span>
+                                    <time class="post__time" datetime="2021-10-05T17:20">17:20</time>
                                 </div>
-                                <div class="chat-wrap-line">
-                                    <span class="chat-caption">Пельмень с мясом.</span>
+                                <div class="post__line">
+                                    <span class="post__caption">Пельмень с мясом.</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="chat-message">
+                        <div class="post__message">
                             <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
                                 выпрыгнет
                                 утка.</p>
@@ -201,20 +202,20 @@
                             <p>Он так сидит уже несколько лет.</p>
                         </div>
                     </div>
-                    <div class="chat-item box swiper-slide">
-                        <div class="chat-info">
-                            <div class="profile-image" style="background-image: url('images/avatar.jpg')"></div>
-                            <div class="chat-wrap">
-                                <div class="chat-wrap-line">
-                                    <span class="chat-name">Qulliman</span>
-                                    <time class="chat-time" datetime="2021-10-05T17:20">17:20</time>
+                    <div class="blog__post post box swiper-slide">
+                        <div class="post__info">
+                            <div class="post__profile-image profile-image" style="background-image: url('images/avatar.jpg')"></div>
+                            <div class="post__wrapper">
+                                <div class="post__line">
+                                    <span class="post__name">Qulliman</span>
+                                    <time class="post__time" datetime="2021-10-05T17:20">17:20</time>
                                 </div>
-                                <div class="chat-wrap-line">
-                                    <span class="chat-caption">Пес – это тоже я.</span>
+                                <div class="post__line">
+                                    <span class="post__caption">Пес – это тоже я.</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="chat-message">
+                        <div class="post__message">
                             <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
                                 выпрыгнет
                                 утка.</p>
@@ -222,59 +223,59 @@
                             <p>Он так сидит уже несколько лет.</p>
                         </div>
                     </div>
-                    <div class="chat-item box swiper-slide">
-                        <div class="chat-info">
-                            <div class="profile-image yellow-gradient online">R</div>
-                            <div class="chat-wrap">
-                                <div class="chat-wrap-line">
-                                    <span class="chat-name">Ran</span>
-                                    <time datetime="2021-10-05T08:20" class="chat-time">8:20</time>
+                    <div class="blog__post post box swiper-slide">
+                        <div class="post__info">
+                            <div class="post__profile-image profile-image yellow-gradient online">R</div>
+                            <div class="post__wrapper">
+                                <div class="post__line">
+                                    <span class="post__name">Ran</span>
+                                    <time datetime="2021-10-05T08:20" class="post__time">8:20</time>
                                 </div>
-                                <div class="chat-wrap-line">
-                                    <span class="chat-caption">Взгляд - это зеркало души.</span>
+                                <div class="post__line">
+                                    <span class="post__caption">Взгляд - это зеркало души.</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="chat-message">
+                        <div class="post__message">
                             <p>Жил да был как-то хомяк, он любил играть с прищепками и был одинок, и решил
                                 создать семью, которая состояла из хомячихи и двух хомячат. И вот однажды в
                                 доме
                                 появился еще один хомяк</p>
                         </div>
                     </div>
-                    <div class="chat-item box swiper-slide">
-                        <div class="chat-info">
-                            <div class="profile-image orange-gradient online">F</div>
-                            <div class="chat-wrap">
-                                <div class="chat-wrap-line">
-                                    <span class="chat-name">Frefyse</span>
-                                    <time datetime="2021-10-05T04:20" class="chat-time">4:20</time>
+                    <div class="blog__post post box swiper-slide">
+                        <div class="post__info">
+                            <div class="post__profile-image profile-image orange-gradient online">F</div>
+                            <div class="post__wrapper">
+                                <div class="post__line">
+                                    <span class="post__name">Frefyse</span>
+                                    <time datetime="2021-10-05T04:20" class="post__time">4:20</time>
                                 </div>
-                                <div class="chat-wrap-line">
-                                    <span class="chat-caption">ауф диар фройндшафт!</span>
+                                <div class="post__line">
+                                    <span class="post__caption">ауф диар фройндшафт!</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="chat-message">
+                        <div class="post__message">
                             <p>Что делать если кот укусил собаку? Прочитать эту историю. Кот укусил собаку.
                                 Собака укусила кошку. А кошка, случайно, укусила человека. И теперь на нем
                                 живого места нет!</p>
                         </div>
                     </div>
-                    <div class="chat-item box swiper-slide">
-                        <div class="chat-info">
-                            <div class="profile-image purple-gradient">Y</div>
-                            <div class="chat-wrap">
-                                <div class="chat-wrap-line">
-                                    <span class="chat-name">Ynfan</span>
-                                    <time datetime="2021-10-05T17:20" class="chat-time">17:20</time>
+                    <div class="blog__post post box swiper-slide">
+                        <div class="post__info">
+                            <div class="post__profile-image profile-image purple-gradient">Y</div>
+                            <div class="post__wrapper">
+                                <div class="post__line">
+                                    <span class="post__name">Ynfan</span>
+                                    <time datetime="2021-10-05T17:20" class="post__time">17:20</time>
                                 </div>
-                                <div class="chat-wrap-line">
-                                    <span class="chat-caption">Пельмень с мясом.</span>
+                                <div class="post__line">
+                                    <span class="post__caption">Пельмень с мясом.</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="chat-message">
+                        <div class="post__message">
                             <p>Мой кот постоянно ходит по краю бассейна, как будто ждет, что оттуда
                                 выпрыгнет
                                 утка.</p>
@@ -286,49 +287,50 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-            <div class="gallery swiper">
-                <div class="gallery-list swiper-wrapper">
-                    <div class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
-                                src="images/gallery1.jpg" alt=""></a>
-                        <div class="gallery-description">
-                            <a class="gallery-name" href="pets-detail.html">Bob</a>
-                            <div class="gallery-info">
-                                <span class="gallery-caption young">Котенок</span>
-                                <button class="likes-counter">321</button>
+            <div class="content__gallery gallery swiper">
+                <div class="gallery__list swiper-wrapper">
+                    <div class="gallery__card card box swiper-slide">
+                        <a class="card__link" href="pets-detail.html">
+                            <img class="card__image" src="images/gallery1.jpg" alt="">
+                        </a>
+                        <div class="card__desc">
+                            <a class="card__name" href="pets-detail.html">Bob</a>
+                            <div class="card__info">
+                                <span class="card__caption young">Котенок</span>
+                                <button class="card__like-counter">321</button>
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                    <div class="gallery__card box swiper-slide">
+                        <a class="card__link" href="pets-detail.html"><img class="card__image"
                                 src="images/gallery2.jpg" alt=""></a>
-                        <div class="gallery-description">
-                            <a class="gallery-name" href="pets-detail.html">Loki</a>
-                            <div class="gallery-info">
-                                <span class="gallery-caption">Кот</span>
-                                <button class="likes-counter pressed">326</button>
+                        <div class="card__desc">
+                            <a class="card__name" href="pets-detail.html">Loki</a>
+                            <div class="card__info">
+                                <span class="card__caption">Кот</span>
+                                <button class="card__like-counter pressed">326</button>
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                    <div class="gallery__card box swiper-slide">
+                        <a class="card__link" href="pets-detail.html"><img class="card__image"
                                 src="images/gallery3.jpg" alt=""></a>
-                        <div class="gallery-description">
-                            <a class="gallery-name" href="pets-detail.html">Bob</a>
-                            <div class="gallery-info">
-                                <span class="gallery-caption young">Котенок</span>
-                                <button class="likes-counter">2</button>
+                        <div class="card__desc">
+                            <a class="card__name" href="pets-detail.html">Bob</a>
+                            <div class="card__info">
+                                <span class="card__caption young">Котенок</span>
+                                <button class="card__like-counter">2</button>
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item box swiper-slide">
-                        <a class="gallery-image-link" href="pets-detail.html"><img class="gallery-image"
+                    <div class="gallery__card box swiper-slide">
+                        <a class="card__link" href="pets-detail.html"><img class="card__image"
                                 src="images/gallery4.jpg" alt=""></a>
-                        <div class="gallery-description">
-                            <a class="gallery-name" href="pets-detail.html">Loki</a>
-                            <div class="gallery-info">
-                                <span class="gallery-caption">Кот</span>
-                                <button class="likes-counter">1</button>
+                        <div class="card__desc">
+                            <a class="card__name" href="pets-detail.html">Loki</a>
+                            <div class="card__info">
+                                <span class="card__caption">Кот</span>
+                                <button class="card__like-counter">1</button>
                             </div>
                         </div>
                     </div>
@@ -336,23 +338,20 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-            <div class="users box">
-                <div class="users-wrapper">
-                    <div class="profile-image yellow-gradient">r</div>
-                    <div class="profile-image purple-gradient">t</div>
-                    <div class="profile-image orange-gradient">q</div>
-                    <div class="profile-image green-gradient">j</div>
-                    <div class="profile-image pink-gradient">y</div>
-                    <div class="profile-image green-gradient">j</div>
-                    <div class="profile-image">+</div>
+            <div class="content__users users box">
+                <div class="users__wrapper">
+                    <div class="users__profile-image profile-image yellow-gradient">r</div>
+                    <div class="users__profile-image profile-image purple-gradient">t</div>
+                    <div class="users__profile-image profile-image orange-gradient">q</div>
+                    <div class="users__profile-image profile-image green-gradient">j</div>
+                    <div class="users__profile-image profile-image pink-gradient">y</div>
+                    <div class="users__profile-image profile-image green-gradient">j</div>
+                    <div class="users__profile-image profile-image">+</div>
                 </div>
-                <button class="button small">Напиши сейчас</button>
+                <button class="users__button button button--small">Напиши сейчас</button>
             </div>
         </div>
     </main>
-    <script>
-
-    </script>
 </body>
 
 </html>
