@@ -1,4 +1,4 @@
-let counters = document.querySelectorAll('.likes-counter');
+let counters = document.querySelectorAll('.card__like-counter');
 
 for (let counter of counters) {
     let count = parseInt(counter.textContent)
